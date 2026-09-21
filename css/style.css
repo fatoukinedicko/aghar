@@ -1,0 +1,412 @@
+/* ==========================================================================
+   AGHAR - MAISON D'ARTISANAT TOUAREG (SOUMBÉDIOUNE, DAKAR)
+   Direction Artistique Haute Gamme & Héritage Saharien
+   ========================================================================== */
+
+:root {
+    /* Palette Saharienne Noble */
+    --color-sand-bg: #FAF7F2;
+    --color-sand-card: #FFFFFF;
+    --color-sand-alt: #F3ECE1;
+    --color-sand-border: #E8DDCD;
+    
+    --color-indigo-dark: #0B131F;
+    --color-indigo-subtle: #142033;
+    --color-indigo-light: #1E304C;
+    
+    --color-gold: #C5A059;
+    --color-gold-light: #DFBA73;
+    --color-gold-dark: #9E7D38;
+    --color-gold-subtle: rgba(197, 160, 89, 0.22);
+    
+    --color-terracotta: #8F3B23;
+    --color-terracotta-dark: #702B17;
+    --color-leather: #4A2814;
+    
+    --color-text-main: #1C1917;
+    --color-text-muted: #6B635B;
+    --color-text-light: #948A7E;
+
+    --font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color-sand-bg);
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-sand-bg);
+    color: var(--color-text-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+}
+
+/* Texture de fond subtile lin / désert */
+.bg-desert-luxury {
+    background-color: var(--color-sand-bg);
+    background-image: radial-gradient(var(--color-gold) 0.65px, transparent 0.65px), radial-gradient(#E2D5C3 0.65px, var(--color-sand-bg) 0.65px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+}
+
+/* Hero Editorial Background */
+.hero-luxury-bg {
+    background: radial-gradient(circle at 80% 20%, rgba(197, 160, 89, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 10% 80%, rgba(143, 59, 35, 0.22) 0%, transparent 40%),
+                linear-gradient(135deg, #070D16 0%, #0E1726 50%, #162438 100%),
+                url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z' fill='none' stroke='%23C5A059' stroke-opacity='0.09' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='2.5' fill='%23C5A059' fill-opacity='0.12'/%3E%3C/svg%3E");
+    background-size: cover, cover, cover, 80px 80px;
+}
+
+/* Onglets Interactifs Hero Showcase */
+.hero-tab-btn {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+    color: #D6D3D1;
+}
+
+.hero-tab-btn:hover {
+    background: rgba(197, 160, 89, 0.15);
+    border-color: rgba(197, 160, 89, 0.6);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.hero-tab-btn.active {
+    background: linear-gradient(135deg, rgba(197, 160, 89, 0.32) 0%, rgba(143, 59, 35, 0.28) 100%);
+    border-color: #C5A059;
+    color: #FFDF80;
+    box-shadow: 0 4px 16px rgba(197, 160, 89, 0.25);
+}
+
+/* Miniatures de Présentation Hero */
+.hero-thumb-btn {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.65;
+    border: 2px solid transparent;
+}
+
+.hero-thumb-btn:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+    border-color: rgba(197, 160, 89, 0.5);
+}
+
+.hero-thumb-btn.active {
+    opacity: 1;
+    border-color: #C5A059;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-fade-image {
+    transition: opacity 0.35s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Barre de défilement dorée discrète */
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: #F3ECE1;
+}
+::-webkit-scrollbar-thumb {
+    background: #C5A059;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #9E7D38;
+}
+
+/* Liseré et typographie dorée */
+.text-gold-luxe {
+    background: linear-gradient(135deg, #F9ECC8 0%, #D4AF37 50%, #9E7B35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.border-gold-luxe {
+    border-color: rgba(197, 160, 89, 0.45);
+}
+
+.gold-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px auto;
+}
+.gold-divider::before,
+.gold-divider::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.6), transparent);
+}
+
+/* Carte Produit - Rendu Galerie de Musée */
+.gallery-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 18px -2px rgba(28, 25, 23, 0.05);
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -8px rgba(28, 25, 23, 0.12);
+    border-color: rgba(197, 160, 89, 0.7);
+}
+
+.gallery-card:hover .gallery-img {
+    transform: scale(1.04);
+}
+
+.gallery-img {
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Boutons & Pilules */
+.category-pill {
+    transition: all 0.25s ease;
+}
+.category-pill.active {
+    background-color: var(--color-indigo-dark);
+    color: #FFFFFF;
+    border-color: var(--color-gold);
+    box-shadow: 0 4px 12px rgba(11, 19, 31, 0.25);
+}
+
+.btn-luxury-primary {
+    background: linear-gradient(135deg, #142033 0%, #0B131F 100%);
+    color: #FFFFFF;
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    transition: all 0.3s ease;
+}
+.btn-luxury-primary:hover {
+    background: linear-gradient(135deg, #1E304C 0%, #142033 100%);
+    border-color: var(--color-gold);
+    box-shadow: 0 6px 20px rgba(11, 19, 31, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-luxury-gold {
+    background: linear-gradient(135deg, #DFBA73 0%, #C5A059 50%, #9E7D38 100%);
+    color: #0E1624;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.btn-luxury-gold:hover {
+    background: linear-gradient(135deg, #E8D39E 0%, #D4AF37 50%, #AC883E 100%);
+    box-shadow: 0 8px 24px rgba(197, 160, 89, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-whatsapp-luxe {
+    background: linear-gradient(135deg, #1B8A5A 0%, #126340 100%);
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+.btn-whatsapp-luxe:hover {
+    background: linear-gradient(135deg, #23A46D 0%, #177A4E 100%);
+    box-shadow: 0 8px 22px rgba(27, 138, 90, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Pulsation délicate du bouton flottant WhatsApp */
+.whatsapp-pulse-gold {
+    animation: waPulse 2.8s infinite;
+}
+@keyframes waPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(27, 138, 90, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 16px rgba(27, 138, 90, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(27, 138, 90, 0);
+    }
+}
+
+/* Panier glissant */
+#cartDrawer {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#cartDrawer.open {
+    transform: translateX(0);
+}
+
+/* Modale */
+.modal-luxury-content {
+    animation: luxuryModalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes luxuryModalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Toasts */
+#toastContainer {
+    position: fixed;
+    bottom: 28px;
+    left: 28px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+.toast {
+    pointer-events: auto;
+    animation: toastSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes toastSlide {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   HEADER HAUTE JOAILLERIE & ARTISANAT D'ART
+   ========================================================================== */
+.header-glass {
+    background: rgba(250, 247, 242, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1.5px solid rgba(197, 160, 89, 0.45);
+    box-shadow: 0 4px 24px -2px rgba(11, 19, 31, 0.05), 0 1px 0 0 rgba(197, 160, 89, 0.2);
+}
+
+/* Dropdown Menu Haute Joaillerie */
+.nav-dropdown-wrapper {
+    position: relative;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    width: 330px;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(197, 160, 89, 0.55);
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 45px -10px rgba(11, 19, 31, 0.22), 0 0 0 1px rgba(197, 160, 89, 0.15);
+    padding: 0.65rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 60;
+}
+
+.nav-dropdown-wrapper:hover .nav-dropdown-menu,
+.nav-dropdown-wrapper:focus-within .nav-dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.7rem 0.85rem;
+    border-radius: 0.85rem;
+    transition: all 0.2s ease;
+    color: #1C1917;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.nav-dropdown-item:hover {
+    background: #FAF7F2;
+    color: #8F3B23;
+    transform: translateX(3px);
+}
+
+/* Barre de recherche d'en-tête */
+.header-search-wrap {
+    transition: all 0.3s ease;
+    background: #FFFFFF;
+    border: 1px solid #E2D5C3;
+}
+
+.header-search-wrap:focus-within {
+    border-color: #C5A059;
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+}
+
+/* Bouton WhatsApp Header */
+.header-wa-btn {
+    background: linear-gradient(135deg, #1B8A5A 0%, #126340 100%);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.25s ease;
+}
+
+.header-wa-btn:hover {
+    background: linear-gradient(135deg, #22A069 0%, #16744B 100%);
+    box-shadow: 0 4px 16px rgba(27, 138, 90, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   ESPACE ARTISAN & GESTIONNAIRE DE CATALOGUE (ADMIN)
+   ========================================================================== */
+.admin-tab-btn {
+    transition: all 0.25s ease;
+    border-bottom: 2px solid transparent;
+    color: #78716C;
+}
+
+.admin-tab-btn:hover {
+    color: #1C1917;
+}
+
+.admin-tab-btn.active {
+    color: #8F3B23;
+    border-bottom-color: #C5A059;
+    font-weight: 800;
+}
+
+.admin-dropzone {
+    border: 2px dashed rgba(197, 160, 89, 0.6);
+    background: #FAF7F2;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.admin-dropzone:hover {
+    border-color: #8F3B23;
+    background: #F3ECE1;
+}
+
+.btn-destructive {
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FCA5A5;
+    transition: all 0.2s ease;
+}
+
+.btn-destructive:hover {
+    background: #DC2626;
+    color: #FFFFFF;
+    border-color: #DC2626;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+
+

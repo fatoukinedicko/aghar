@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGHAR | Maison d'Artisanat Touareg — Dakar, Soumbédioune</title>
+    <link rel="icon" type="image/png" href="LOGO1-03.png">
+    <meta name="description" content="Maison d'artisanat d'art touareg au Village Artisanal de Soumbédioune, Dakar. Coffres sculptés en bois noble et cuir gravé, boîtes en cuir repoussé, paniers et jarres sahariennes. Maître Artisan Boubacar Dicko.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sand-bg': '#FAF7F2',
+                        'sand-alt': '#F3ECE1',
+                        'indigo-noir': '#0B131F',
+                        'gold-luxe': '#C5A059',
+                        'terracotta': '#8F3B23',
+                        'leather-dark': '#4A2814'
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Luxury Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Data & Visuals -->
+    <script src="js/data.js"></script>
+    <script src="js/images.js"></script>
+</head>
+<body class="bg-desert-luxury min-h-screen flex flex-col text-stone-900 antialiased selection:bg-amber-200 selection:text-stone-950">
+
+    <!-- Ruban Supérieur de Prestige -->
+    <aside class="bg-[#070D16] text-stone-300 text-xs py-2.5 px-4 border-b border-[#C5A059]/35 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5 text-center sm:text-left">
+            <div class="flex items-center gap-2.5 flex-wrap justify-center sm:justify-start">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-black bg-[#C5A059] text-[#070D16] uppercase tracking-widest shadow-sm">
+                    ATELIER D'ART N° 42
+                </span>
+                <span class="text-stone-300 font-light text-xs">Village Artisanal de Soumbédioune, Corniche Ouest — Dakar, Sénégal</span>
+            </div>
+            <div class="flex items-center gap-5 text-xs text-stone-300 flex-wrap justify-center">
+                <a href="https://wa.me/221779640035" target="_blank" class="hover:text-amber-300 flex items-center gap-1.5 transition-colors font-medium">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Contact Direct Boubacar Dicko : <strong class="text-white">+221 77 964 00 35</strong></span>
+                </a>
+                <span class="hidden md:inline text-stone-600">|</span>
+                <span class="hidden md:inline text-[#E8D39E] font-medium flex items-center gap-1.5">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#C5A059]"></i>
+                    <span>Pièces Uniques Photographiées à l'Atelier</span>
+                </span>
+                <span class="hidden lg:inline text-stone-600">|</span>
+                <button onclick="openAdminModal()" class="hover:text-amber-300 flex items-center gap-1.5 transition-colors font-bold text-amber-200/90 text-xs cursor-pointer py-0.5 px-2 rounded-md bg-white/10 hover:bg-white/20 border border-[#C5A059]/40" title="Gérer le catalogue (Ajout / Retrait de produits)">
+                    <i data-lucide="lock" class="w-3 h-3 text-[#C5A059]"></i>
+                    <span>Espace Artisan</span>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Navigation Principale Haute Joaillerie & Artisanat d'Art -->
+    <header class="sticky top-0 z-40 header-glass transition-all shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-22 sm:h-26 flex items-center justify-between gap-4 lg:gap-8">
+            
+            <!-- Logo de Marque Officiel Agrandie & Sceau Prestige -->
+            <a href="#" class="flex items-center gap-3 sm:gap-4 group shrink-0 py-1" title="Maison AGHAR — Retour en haut">
+                <!-- Médaillon Doré de l'Emblème -->
+                <div class="h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-white border-2 border-[#C5A059] p-1.5 flex items-center justify-center shadow-md group-hover:scale-105 group-hover:border-[#8F3B23] transition-all duration-300 shrink-0">
+                    <img src="LOGO1-03.png" alt="Emblème Touareg AGHAR" class="h-full w-full object-contain">
+                </div>
+                <!-- Typographie AGHAR Officielle Agrandie avec Sous-Titre -->
+                <div class="flex flex-col justify-center">
+                    <img src="AGHAR-03.png" alt="AGHAR" class="h-10 sm:h-12 md:h-14 w-auto object-contain object-left group-hover:scale-102 transition-transform duration-300 drop-shadow-sm">
+                    <div class="flex items-center gap-2 mt-0.5">
+                        <span class="text-[9px] sm:text-[10px] uppercase font-extrabold tracking-[0.24em] text-[#8F3B23]">
+                            Maison d'Art Touareg
+                        </span>
+                        <span class="w-1 h-1 rounded-full bg-[#C5A059] hidden sm:inline-block"></span>
+                        <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-[#C5A059] hidden sm:inline-block">
+                            Dakar
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Liens de Navigation Éditoriaux (Desktop) -->
+            <nav class="hidden xl:flex items-center gap-7 text-xs uppercase font-bold tracking-widest text-stone-700">
+                
+                <!-- Menu Déroulant Haute Collection -->
+                <div class="nav-dropdown-wrapper py-2">
+                    <button class="hover:text-[#8F3B23] transition-colors flex items-center gap-1.5 group cursor-pointer">
+                        <span>La Collection</span>
+                        <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-[#C5A059] group-hover:rotate-180 transition-transform duration-200"></i>
+                    </button>
+                    
+                    <div class="nav-dropdown-menu">
+                        <div class="px-3 py-2 border-b border-stone-100 mb-1">
+                            <span class="text-[10px] font-extrabold uppercase tracking-[0.2em] text-[#C5A059]">Spécialités de l'Atelier</span>
+                        </div>
+                        <a href="#creations" onclick="selectCategoryAndScroll('coffres')" class="nav-dropdown-item group">
+                            <div class="w-8 h-8 rounded-lg bg-amber-50 border border-[#C5A059]/40 flex items-center justify-center text-sm shrink-0 group-hover:bg-[#8F3B23] group-hover:text-white transition-colors">📦</div>
+                            <div>
+                                <div class="text-xs font-bold text-stone-900 group-hover:text-[#8F3B23]">Coffres & Semainiers</div>
+                                <div class="text-[10px] text-stone-500 font-light">Acacia sculpté, cuir d'ébène et laiton</div>
+                            </div>
+                        </a>
+                        <a href="#creations" onclick="selectCategoryAndScroll('boites')" class="nav-dropdown-item group">
+                            <div class="w-8 h-8 rounded-lg bg-amber-50 border border-[#C5A059]/40 flex items-center justify-center text-sm shrink-0 group-hover:bg-[#8F3B23] group-hover:text-white transition-colors">👝</div>
+                            <div>
+                                <div class="text-xs font-bold text-stone-900 group-hover:text-[#8F3B23]">Boîtes & Écrins en Cuir</div>
+                                <div class="text-[10px] text-stone-500 font-light">Cuir ciselé, safran, miroirs nomades</div>
+                            </div>
+                        </a>
+                        <a href="#creations" onclick="selectCategoryAndScroll('paniers')" class="nav-dropdown-item group">
+                            <div class="w-8 h-8 rounded-lg bg-amber-50 border border-[#C5A059]/40 flex items-center justify-center text-sm shrink-0 group-hover:bg-[#8F3B23] group-hover:text-white transition-colors">🧺</div>
+                            <div>
+                                <div class="text-xs font-bold text-stone-900 group-hover:text-[#8F3B23]">Paniers & Jarres Sahariennes</div>
+                                <div class="text-[10px] text-stone-500 font-light">Vannerie de doum sauvage & cauris</div>
+                            </div>
+                        </a>
+                        <div class="mt-1 pt-2 border-t border-stone-100">
+                            <a href="#creations" onclick="selectCategoryAndScroll('all')" class="flex items-center justify-between text-[11px] font-extrabold text-[#C5A059] hover:text-[#8F3B23] px-3 py-1.5 rounded-lg hover:bg-stone-50 transition-colors">
+                                <span>Voir les 17 Créations</span>
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#artisan" class="hover:text-[#8F3B23] transition-colors py-2 relative group">
+                    <span>L'Histoire & Inaden</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C5A059] group-hover:w-full transition-all duration-300"></span>
+                </a>
+                
+                <a href="#surmesure" class="hover:text-[#8F3B23] transition-colors py-2 relative group flex items-center gap-1.5">
+                    <span>Sur-Mesure</span>
+                    <span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-amber-100 text-[#8F3B23] border border-amber-300/60 uppercase">Mariage</span>
+                </a>
+                
+                <a href="#entretien" class="hover:text-[#8F3B23] transition-colors py-2 relative group">
+                    <span>Art du Cuir</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C5A059] group-hover:w-full transition-all duration-300"></span>
+                </a>
+                
+                <a href="#contact" class="hover:text-[#8F3B23] transition-colors py-2 relative group">
+                    <span>L'Atelier N° 42</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C5A059] group-hover:w-full transition-all duration-300"></span>
+                </a>
+            </nav>
+
+            <!-- Actions & Hub Interactif : Recherche, Devise, WhatsApp & Panier -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                
+                <!-- Recherche Rapide Intégrée (Desktop) -->
+                <div class="header-search-wrap hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full shadow-inner max-w-[180px] lg:max-w-[220px]">
+                    <i data-lucide="search" class="w-3.5 h-3.5 text-stone-400 shrink-0"></i>
+                    <input type="text" id="headerSearchInput" placeholder="Rechercher..." class="bg-transparent text-xs text-stone-800 placeholder-stone-400 focus:outline-none w-full">
+                </div>
+
+                <!-- Sélecteur de Devise Raffiné -->
+                <div class="relative">
+                    <label for="currencySelector" class="sr-only">Devise</label>
+                    <div class="flex items-center gap-1 bg-white hover:bg-stone-50 border border-stone-300 text-stone-900 rounded-xl px-2.5 py-1.5 shadow-sm transition-all focus-within:ring-2 focus-within:ring-[#C5A059]">
+                        <i data-lucide="coins" class="w-3.5 h-3.5 text-[#C5A059] shrink-0"></i>
+                        <select id="currencySelector" class="bg-transparent text-xs font-bold cursor-pointer focus:outline-none pr-1">
+                            <option value="FCFA" selected>FCFA</option>
+                            <option value="EUR">€ EUR</option>
+                            <option value="USD">$ USD</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Bouton WhatsApp Artisan Direct Header -->
+                <a href="https://wa.me/221779640035?text=Bonjour%20Ma%C3%AEtre%20Boubacar,%20je%20d%C3%A9couvre%20votre%20boutique%20AGHAR" target="_blank" class="header-wa-btn hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold shadow-md tracking-wider uppercase group" title="Échanger en direct avec Boubacar Dicko sur WhatsApp">
+                    <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
+                    <span class="hidden lg:inline">WhatsApp</span>
+                    <span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>
+                </a>
+
+                <!-- Bouton Panier d'Exception -->
+                <button id="cartToggleBtn" class="relative px-3.5 py-2 sm:py-2.5 rounded-xl btn-luxury-primary text-white transition-all active:scale-95 shadow-md flex items-center gap-2" title="Consulter le panier">
+                    <i data-lucide="shopping-bag" class="w-4 h-4 text-[#FFDF80]"></i>
+                    <span class="hidden sm:inline text-xs font-bold tracking-wider uppercase">Panier</span>
+                    <span class="cart-badge bg-[#8F3B23] text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm transition-transform">0</span>
+                </button>
+
+                <!-- Menu Mobile Hamburger -->
+                <button id="mobileMenuBtn" class="xl:hidden p-2.5 rounded-xl text-stone-800 bg-stone-100 hover:bg-stone-200 border border-stone-300 transition-colors" aria-label="Ouvrir le menu mobile">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Déroulant Enrichi Haute Joaillerie -->
+        <div id="mobileMenu" class="hidden xl:hidden bg-[#FAF7F2] border-b-2 border-[#C5A059]/40 px-5 py-6 space-y-5 shadow-2xl transition-all">
+            
+            <!-- Carte Profil Atelier Mobile -->
+            <div class="p-3.5 bg-white rounded-2xl border border-stone-200 shadow-sm flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-[#0B131F] border border-[#C5A059] p-1 flex items-center justify-center shrink-0">
+                    <img src="LOGO1-03.png" alt="Emblème" class="w-full h-full object-contain">
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="text-xs font-extrabold font-heading text-stone-900 truncate">Maître Boubacar Dicko</div>
+                    <div class="text-[11px] text-[#8F3B23] font-medium">Atelier N° 42 • Soumbédioune, Dakar</div>
+                    <div class="text-[10px] text-stone-500 mt-0.5">Ouvert 7j/7 de 9h à 19h30</div>
+                </div>
+            </div>
+
+            <!-- Barre de Recherche Mobile -->
+            <div class="header-search-wrap flex items-center gap-2.5 px-4 py-2.5 rounded-xl shadow-inner bg-white">
+                <i data-lucide="search" class="w-4 h-4 text-stone-400"></i>
+                <input type="text" id="mobileSearchInput" placeholder="Rechercher coffre, boîte, panier..." class="bg-transparent text-xs text-stone-800 placeholder-stone-400 focus:outline-none w-full">
+            </div>
+
+            <!-- Accès Direct Métiers de l'Atelier -->
+            <div>
+                <div class="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A059] mb-2.5">
+                    Spécialités de la Boutique :
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="selectCategoryAndScroll('coffres'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-left flex items-center gap-2 text-xs font-bold text-stone-800">
+                        <span>📦</span>
+                        <span>Coffres d'Ébène</span>
+                    </button>
+                    <button onclick="selectCategoryAndScroll('boites'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-left flex items-center gap-2 text-xs font-bold text-stone-800">
+                        <span>👝</span>
+                        <span>Boîtes en Cuir</span>
+                    </button>
+                    <button onclick="selectCategoryAndScroll('paniers'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-left flex items-center gap-2 text-xs font-bold text-stone-800">
+                        <span>🧺</span>
+                        <span>Paniers Doum</span>
+                    </button>
+                    <button onclick="selectCategoryAndScroll('surmesure'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-amber-50 hover:bg-amber-100/70 border border-amber-300/60 rounded-xl text-left flex items-center gap-2 text-xs font-bold text-[#8F3B23]">
+                        <span>✨</span>
+                        <span>Sur-Mesure</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Liens de Navigation Mobile -->
+            <div class="space-y-2 text-xs uppercase font-bold tracking-widest border-t border-stone-200 pt-3">
+                <a href="#creations" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
+                    <span>La Collection (17 Pièces)</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+                </a>
+                <a href="#artisan" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
+                    <span>L'Histoire & Savoir-Faire Inaden</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+                </a>
+                <a href="#surmesure" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
+                    <span>Commandes Sur-Mesure & Mariages</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+                </a>
+                <a href="#entretien" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
+                    <span>Art & Entretien du Cuir Saharien</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+                </a>
+                <a href="#contact" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
+                    <span>Visiter l'Atelier N° 42 à Dakar</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+                </a>
+            </div>
+
+            <!-- Sélecteur Devise Mobile & Contact Rapide -->
+            <div class="pt-3 border-t border-stone-200 flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-stone-500 font-medium">Devise :</span>
+                    <select id="mobileCurrencySelector" class="bg-white border border-stone-300 rounded-lg px-2.5 py-1 text-xs font-bold text-stone-900">
+                        <option value="FCFA" selected>FCFA (XOF)</option>
+                        <option value="EUR">€ EUR</option>
+                        <option value="USD">$ USD</option>
+                    </select>
+                </div>
+                <a href="https://wa.me/221779640035" target="_blank" class="btn-whatsapp-luxe px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>WhatsApp (+221)</span>
+                </a>
+            </div>
+
+            <!-- Accès Propriétaire Mobile -->
+            <div class="pt-2">
+                <button onclick="openAdminModal(); document.getElementById('mobileMenu').classList.add('hidden');" class="w-full py-2.5 px-3 rounded-xl bg-stone-900 text-amber-300 text-xs font-bold flex items-center justify-center gap-2 border border-[#C5A059]/40 hover:bg-stone-800">
+                    <i data-lucide="lock" class="w-3.5 h-3.5 text-[#C5A059]"></i>
+                    <span>Espace Propriétaire • Gérer le Catalogue</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Hero Section Haute Joaillerie & Artisanat d'Art Saharien -->
+    <section class="relative hero-luxury-bg text-white overflow-hidden py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-b-2 border-[#C5A059]/40">
+        
+        <!-- Éléments Lumineux & Textures du Sahara -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-[#8F3B23]/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                
+                <!-- Colonne Gauche : Narration de Prestige & Accès aux 3 Métiers -->
+                <div class="lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
+                    
+                    <!-- Sceau d'Authenticité Touareg -->
+                    <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2.5 px-4 py-2 rounded-full bg-stone-900/80 border border-[#C5A059]/60 shadow-xl backdrop-blur-md">
+                        <div class="w-6 h-6 rounded-full bg-white/10 p-0.5 border border-[#C5A059] flex items-center justify-center shrink-0">
+                            <img src="LOGO1-03.png" alt="Emblème AGHAR" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#FFDF80]">
+                            Atelier N° 42 • Soumbédioune, Dakar
+                        </span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 hidden sm:inline-block"></span>
+                        <span class="text-[11px] text-stone-300 font-light hidden sm:inline-block">
+                            Héritage Forgeron Inaden
+                        </span>
+                    </div>
+                    
+                    <!-- Titre Magistral -->
+                    <div class="space-y-2">
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight leading-[1.12]">
+                            L'Artisanat Touareg <br class="hidden sm:inline">
+                            dans toute sa <span class="text-gold-luxe">Noblesse</span>
+                        </h1>
+                        <p class="text-[#E8D39E] font-heading text-sm sm:text-base font-bold tracking-wider uppercase">
+                            Coffres d'Exception • Boîtes en Cuir Ciselé • Paniers Sahariens
+                        </p>
+                    </div>
+                    
+                    <!-- Histoire & Philosophie de l'Artisan -->
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
+                        Face à l'océan, au réputé <strong class="text-white font-medium">Village Artisanal de Soumbédioune</strong>, <strong class="text-[#FFDF80] font-medium">Maître Boubacar Dicko</strong> façonne patiemment chaque pièce à la main selon les règles séculaires des forgerons et maroquiniers nomades (<em>Inaden</em>) : cuirs au tannage végétal, bois noble d'acacia et ébène sculptés, ferrures ciselées et fibres sauvages de doum.
+                    </p>
+
+                    <!-- Raccourcis Rapides vers les 3 Spécialités -->
+                    <div class="pt-1">
+                        <div class="text-[10px] uppercase font-extrabold tracking-[0.22em] text-[#C5A059] mb-2.5">
+                            Explorer par Spécialité Artisanale :
+                        </div>
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+                            <button onclick="selectCategoryAndScroll('coffres')" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-amber-200 transition-all flex items-center gap-2 group shadow-sm">
+                                <span class="text-base group-hover:scale-110 transition-transform">📦</span>
+                                <span>Coffres & Malle</span>
+                            </button>
+                            <button onclick="selectCategoryAndScroll('boites')" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-amber-200 transition-all flex items-center gap-2 group shadow-sm">
+                                <span class="text-base group-hover:scale-110 transition-transform">👝</span>
+                                <span>Boîtes en Cuir</span>
+                            </button>
+                            <button onclick="selectCategoryAndScroll('paniers')" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-amber-200 transition-all flex items-center gap-2 group shadow-sm">
+                                <span class="text-base group-hover:scale-110 transition-transform">🧺</span>
+                                <span>Paniers & Jarres</span>
+                            </button>
+                            <button onclick="selectCategoryAndScroll('surmesure')" class="px-3.5 py-2 rounded-xl bg-[#8F3B23]/40 hover:bg-[#8F3B23]/70 border border-[#C5A059]/40 text-xs font-semibold text-amber-200 transition-all flex items-center gap-2 group shadow-sm">
+                                <span class="text-base group-hover:scale-110 transition-transform">✨</span>
+                                <span>Sur-Mesure</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Boutons Principaux -->
+                    <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <a href="#creations" class="btn-luxury-gold px-8 py-4 rounded-xl shadow-xl flex items-center gap-3 text-xs uppercase tracking-widest font-extrabold group">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-stone-950 group-hover:rotate-12 transition-transform"></i>
+                            <span>Découvrir les 17 Pièces</span>
+                        </a>
+                        <a href="https://wa.me/221779640035?text=Bonjour%20Ma%C3%AEtre%20Boubacar,%20je%20d%C3%A9couvre%20la%20boutique%20AGHAR%20et%20souhaite%20des%20renseignements" target="_blank" class="btn-whatsapp-luxe px-7 py-4 rounded-xl shadow-xl flex items-center gap-2.5 text-xs uppercase tracking-wider font-bold">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Échanger sur WhatsApp (+221 77 964 00 35)</span>
+                        </a>
+                    </div>
+
+                    <!-- Garanties d'Authenticité Saharienne -->
+                    <div class="pt-6 grid grid-cols-3 gap-3 sm:gap-4 border-t border-stone-800/80 max-w-xl mx-auto lg:mx-0 text-left">
+                        <div class="bg-white/5 p-3 rounded-xl border border-stone-800">
+                            <div class="text-amber-400 font-heading text-sm sm:text-base font-bold flex items-center gap-1.5">
+                                <i data-lucide="hammer" class="w-3.5 h-3.5 shrink-0 text-[#C5A059]"></i>
+                                <span>100% Manuel</span>
+                            </div>
+                            <div class="text-[11px] text-stone-400 mt-1 leading-snug font-light">Sans machine industrielle</div>
+                        </div>
+                        <div class="bg-white/5 p-3 rounded-xl border border-stone-800">
+                            <div class="text-amber-400 font-heading text-sm sm:text-base font-bold flex items-center gap-1.5">
+                                <i data-lucide="leaf" class="w-3.5 h-3.5 shrink-0 text-[#C5A059]"></i>
+                                <span>Tannage Végétal</span>
+                            </div>
+                            <div class="text-[11px] text-stone-400 mt-1 leading-snug font-light">Écorces & cire d'abeille</div>
+                        </div>
+                        <div class="bg-white/5 p-3 rounded-xl border border-stone-800">
+                            <div class="text-amber-400 font-heading text-sm sm:text-base font-bold flex items-center gap-1.5">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0 text-[#C5A059]"></i>
+                                <span>Atelier Dakar</span>
+                            </div>
+                            <div class="text-[11px] text-stone-400 mt-1 leading-snug font-light">Atelier N° 42 Soumbédioune</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Colonne Droite : Vitrine Interactive des 3 Spécialités (Coffre, Boîtes, Panier) -->
+                <div class="lg:col-span-5 relative">
+                    
+                    <div class="relative bg-stone-900/90 rounded-3xl border-2 border-[#C5A059]/60 p-4 sm:p-5 shadow-2xl backdrop-blur-xl overflow-hidden">
+                        
+                        <!-- Onglets Sélecteurs des 3 Métiers -->
+                        <div class="grid grid-cols-3 gap-2 mb-3.5 bg-stone-950/80 p-1.5 rounded-2xl border border-stone-800">
+                            <button onclick="updateHeroShowcase(0, true)" class="hero-tab-btn active px-2.5 py-2 rounded-xl text-[11px] font-bold flex flex-col items-center justify-center gap-0.5">
+                                <span class="flex items-center gap-1"><span>📦</span> <span>Coffre</span></span>
+                                <span class="text-[9px] opacity-75 font-normal">Ébène & Laiton</span>
+                            </button>
+                            <button onclick="updateHeroShowcase(1, true)" class="hero-tab-btn px-2.5 py-2 rounded-xl text-[11px] font-bold flex flex-col items-center justify-center gap-0.5">
+                                <span class="flex items-center gap-1"><span>👝</span> <span>Boîtes Cuir</span></span>
+                                <span class="text-[9px] opacity-75 font-normal">Ciselées Main</span>
+                            </button>
+                            <button onclick="updateHeroShowcase(2, true)" class="hero-tab-btn px-2.5 py-2 rounded-xl text-[11px] font-bold flex flex-col items-center justify-center gap-0.5">
+                                <span class="flex items-center gap-1"><span>🧺</span> <span>Panier</span></span>
+                                <span class="text-[9px] opacity-75 font-normal">Doum & Cauris</span>
+                            </button>
+                        </div>
+
+                        <!-- Grand Visuel Portrait 4/5 avec Zoom et Badges -->
+                        <div class="rounded-2xl overflow-hidden shadow-2xl bg-stone-950 aspect-[4/5] flex items-center justify-center relative group cursor-pointer border border-[#C5A059]/30" id="heroShowcaseMediaWrap">
+                            <img id="heroShowcaseImg" src="articles/15.jpeg" alt="Grand Coffre Semainier à Tiroirs" class="hero-fade-image w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
+                            
+                            <!-- Badge Supérieur -->
+                            <span id="heroShowcaseBadge" class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-[#0B131F]/90 text-[#FFDF80] border border-[#C5A059]/70 shadow-lg backdrop-blur-md">
+                                Pièce de Maître N° 15
+                            </span>
+
+                            <!-- Sceau Touareg en Coin -->
+                            <div class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/10 border border-[#C5A059]/60 backdrop-blur-md p-1 flex items-center justify-center shadow-md">
+                                <img src="LOGO1-03.png" alt="Sceau Touareg" class="w-full h-full object-contain">
+                            </div>
+
+                            <!-- Légende Flottante Basse -->
+                            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 text-left">
+                                <span id="heroShowcaseCategory" class="text-[10px] uppercase font-extrabold tracking-[0.2em] text-[#C5A059]">
+                                    Coffres & Ébénisterie d'Apparat
+                                </span>
+                                <h3 id="heroShowcaseTitle" class="text-base sm:text-lg font-bold text-white font-heading mt-0.5 leading-snug">
+                                    Grand Coffre Semainier à Tiroirs
+                                </h3>
+                                <p id="heroShowcaseDesc" class="text-xs text-stone-300 font-light mt-1 line-clamp-2">
+                                    Cuir ébène gravé au fer, laiton massif et 3 tiroirs coulissants pour trésors précieux.
+                                </p>
+                                <div id="heroShowcaseMeta" class="mt-2 text-[11px] text-[#E8D39E] flex items-center font-medium">
+                                    <span class="inline-flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-[#C5A059]"></i> <span>38 jours d'atelier</span></span>
+                                    <span class="mx-2 opacity-40">•</span>
+                                    <span class="inline-flex items-center gap-1"><i data-lucide="maximize" class="w-3.5 h-3.5 text-[#C5A059]"></i> <span>L 75 cm × P 40 cm × H 55 cm</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Barre d'Action & Prix de la Pièce -->
+                        <div class="mt-3.5 pt-3 border-t border-stone-800 flex items-center justify-between gap-3">
+                            <div>
+                                <div class="text-[10px] uppercase tracking-wider text-stone-400 font-light">Prix atelier direct :</div>
+                                <div id="heroShowcasePrice" class="text-lg sm:text-xl font-black text-[#FFDF80] font-heading">
+                                    185 000 FCFA
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <button id="heroShowcaseModalBtn" class="btn-luxury-primary px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md hover:border-[#C5A059]">
+                                    <i data-lucide="eye" class="w-3.5 h-3.5 text-[#C5A059]"></i>
+                                    <span>Fiche</span>
+                                </button>
+                                <button id="heroShowcaseWaBtn" class="btn-whatsapp-luxe px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-md" title="Commander cette création sur WhatsApp">
+                                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                                    <span>Commander</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Miniatures des 3 Métiers Réunis -->
+                        <div class="mt-3.5 pt-3 border-t border-stone-800/80">
+                            <div class="flex items-center justify-between text-[10px] text-stone-400 uppercase tracking-widest font-semibold mb-2">
+                                <span>Aperçu des 3 Créations Clés</span>
+                                <span class="text-[#C5A059]">• Cliquez pour afficher</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2.5">
+                                <button onclick="updateHeroShowcase(0, true)" class="hero-thumb-btn active rounded-xl overflow-hidden aspect-[4/5] bg-stone-950 relative group" title="Voir le Grand Coffre">
+                                    <img src="articles/15.jpeg" alt="Coffre" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                    <span class="absolute bottom-1 inset-x-1 text-[9px] font-bold text-center bg-black/80 text-white py-0.5 rounded backdrop-blur-xs">Coffre</span>
+                                </button>
+                                <button onclick="updateHeroShowcase(1, true)" class="hero-thumb-btn rounded-xl overflow-hidden aspect-[4/5] bg-stone-950 relative group" title="Voir les Boîtes en Cuir">
+                                    <img src="articles/17.jpeg" alt="Boîte en Cuir" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                    <span class="absolute bottom-1 inset-x-1 text-[9px] font-bold text-center bg-black/80 text-white py-0.5 rounded backdrop-blur-xs">Boîtes</span>
+                                </button>
+                                <button onclick="updateHeroShowcase(2, true)" class="hero-thumb-btn rounded-xl overflow-hidden aspect-[4/5] bg-stone-950 relative group" title="Voir le Panier d'Apparat">
+                                    <img src="articles/10.jpeg" alt="Panier" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                                    <span class="absolute bottom-1 inset-x-1 text-[9px] font-bold text-center bg-black/80 text-white py-0.5 rounded backdrop-blur-xs">Panier</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Piliers de l'Artisanat d'Art -->
+    <section class="bg-white border-b border-stone-200 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                
+                <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100/70 text-[#8F3B23] border border-[#C5A059]/30 flex items-center justify-center shrink-0">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-sm text-stone-900">Cuirs Tannés Végétal</h3>
+                        <p class="text-xs text-stone-600 mt-1 leading-relaxed font-light">Tannage naturel sans produits chimiques, nourri aux écorces sahéliennes.</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100/70 text-[#8F3B23] border border-[#C5A059]/30 flex items-center justify-center shrink-0">
+                        <i data-lucide="tree-pine" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-sm text-stone-900">Bois d'Acacia & Ébène</h3>
+                        <p class="text-xs text-stone-600 mt-1 leading-relaxed font-light">Essences nobles imputrescibles assemblées selon les traditions du désert.</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100/70 text-[#8F3B23] border border-[#C5A059]/30 flex items-center justify-center shrink-0">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-sm text-stone-900">Laiton & Poinçons</h3>
+                        <p class="text-xs text-stone-600 mt-1 leading-relaxed font-light">Ferrures protectrices gravées au stylet d'acier aux motifs géométriques.</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200/80 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100/70 text-[#8F3B23] border border-[#C5A059]/30 flex items-center justify-center shrink-0">
+                        <i data-lucide="package-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-sm text-stone-900">Expédition Sécurisée</h3>
+                        <p class="text-xs text-stone-600 mt-1 leading-relaxed font-light">Emballage renforcé sous caisse pour les coffres, expéditions monde entier.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalogue & Galerie des 17 Créations Réelles -->
+    <main id="creations" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        
+        <!-- En-tête de Section Galerie -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-[11px] uppercase font-extrabold tracking-[0.25em] text-[#8F3B23] bg-amber-100/80 px-4 py-1 rounded-full border border-amber-200">
+                ŒUVRES FAÇONNÉES À LA MAIN
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-stone-900 mt-4 tracking-tight">
+                La Collection de l'Atelier
+            </h2>
+            <div class="gold-divider">
+                <span class="text-[#C5A059] font-heading text-lg">ⵣ</span>
+            </div>
+            <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+                Dix-sept pièces réelles issues de notre atelier de Soumbédioune. Chaque coffre, coffret et panier possède son histoire, son grain de cuir et sa géométrie protectrice.
+            </p>
+        </div>
+
+        <!-- Filtres & Outils de Recherche -->
+        <div class="bg-white p-5 rounded-3xl border border-stone-200 shadow-sm mb-10 space-y-4">
+            
+            <!-- Rangée des Catégories -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-2.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none">
+                    <button class="category-pill active px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider border border-stone-300 text-stone-700 shrink-0" data-category="all">
+                        Toutes les Œuvres (17)
+                    </button>
+                    <button class="category-pill px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider border border-stone-300 text-stone-700 shrink-0" data-category="coffres">
+                        Coffres & Malles
+                    </button>
+                    <button class="category-pill px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider border border-stone-300 text-stone-700 shrink-0" data-category="boites">
+                        Boîtes en Cuir
+                    </button>
+                    <button class="category-pill px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider border border-stone-300 text-stone-700 shrink-0" data-category="paniers">
+                        Paniers & Jarres
+                    </button>
+                    <button class="category-pill px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider border border-stone-300 text-stone-700 shrink-0" data-category="surmesure">
+                        Pièces Rares
+                    </button>
+                </div>
+
+                <div id="productCountBadge" class="hidden sm:block text-xs font-bold tracking-wider text-stone-500 bg-stone-100 px-3.5 py-2 rounded-xl shrink-0">
+                    17 pièces
+                </div>
+            </div>
+
+            <!-- Rangée Recherche & Tri -->
+            <div class="flex flex-col sm:flex-row items-center gap-3 pt-3 border-t border-stone-100">
+                <div class="relative flex-1 w-full">
+                    <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                    <input type="text" id="productSearchInput" placeholder="Rechercher par mot-clé (ex: cauris, semainier, miroir, indigo, ébène, marbré, ocre)..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-200 text-xs text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#C5A059]">
+                </div>
+
+                <div class="flex items-center gap-2 w-full sm:w-auto shrink-0">
+                    <label for="productSortSelect" class="text-xs font-bold text-stone-500 uppercase tracking-wider shrink-0">Trier par :</label>
+                    <select id="productSortSelect" class="w-full sm:w-auto px-3 py-2.5 rounded-xl border border-stone-200 text-xs font-semibold text-stone-800 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-[#C5A059]">
+                        <option value="featured">Sélection Atelier</option>
+                        <option value="price-asc">Prix : Moins cher au plus cher</option>
+                        <option value="price-desc">Prix : Plus cher au moins cher</option>
+                        <option value="name">Ordre alphabétique (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grille des Produits au format Portrait 4/5 (aucun rognage d'objet) -->
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            <!-- Rendu dynamique depuis js/app.js avec photos réelles -->
+        </div>
+
+        <!-- État Recherche Vide -->
+        <div id="productsEmptyState" class="hidden py-16 text-center bg-white rounded-3xl border border-dashed border-stone-300">
+            <div class="w-16 h-16 rounded-full bg-amber-50 text-[#8F3B23] flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="search-x" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-lg font-bold text-stone-900 font-heading">Aucune pièce ne correspond à votre recherche</h3>
+            <p class="text-xs text-stone-500 mt-1">Essayez un autre mot-clé ou sélectionnez une autre catégorie.</p>
+        </div>
+    </main>
+
+    <!-- Récit Culturel : L'Atelier N° 42 & La Tradition des Inaden -->
+    <section id="artisan" class="bg-[#0B131F] text-white py-24 px-4 sm:px-6 lg:px-8 border-y border-[#C5A059]/30 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-xs uppercase font-extrabold tracking-[0.25em] text-[#C5A059] bg-white/5 px-4 py-1.5 rounded-full border border-[#C5A059]/40">
+                    Transmission Ancestrale
+                </span>
+                
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-heading tracking-tight leading-tight">
+                    Les Inaden : Maîtres Forgerons & Maroquiniers du Désert
+                </h2>
+
+                <p class="text-stone-300 text-sm leading-relaxed font-light">
+                    Dans la société touareg, l'artisan fait partie de la caste respectée des <strong class="text-amber-300">Inaden</strong>. Détenteurs exclusifs des secrets de la matière, ils sont les seuls habilités à transformer le bois d'acacia, le cuir de chèvre et les métaux purs en objets rituels et protecteurs.
+                </p>
+
+                <p class="text-stone-300 text-sm leading-relaxed font-light">
+                    Installé face à la brise marine au <strong class="text-white font-semibold">Village Artisanal de Soumbédioune (Atelier N° 42)</strong> à Dakar, Maître Boubacar Dicko fait dialoguer la rigueur de l'art touareg avec l'esprit ouvert de la capitale sénégalaise. Chaque incision dans le cuir, chaque chevron tressé dans le doum sauvage raconte une histoire de résistance et de beauté nomade.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 pt-4 border-t border-stone-800">
+                    <div class="p-4 bg-white/5 rounded-2xl border border-stone-800">
+                        <div class="text-xs font-bold text-amber-300 font-heading mb-1">Tannage Naturel</div>
+                        <div class="text-[11px] text-stone-300 leading-relaxed font-light">Utilisation d'écorces d'acacia nilotica et graines de grenade.</div>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-2xl border border-stone-800">
+                        <div class="text-xs font-bold text-amber-300 font-heading mb-1">Visite à Soumbédioune</div>
+                        <div class="text-[11px] text-stone-300 leading-relaxed font-light">Atelier ouvert 7j/7 de 9h à 19h30 sur la Corniche Ouest.</div>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <a href="https://wa.me/221779640035?text=Bonjour%20Boubacar,%20je%20souhaite%20visiter%20votre%20atelier%20%C3%A0%20Soumb%C3%A9dioune" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#C5A059] hover:text-amber-300 transition-colors">
+                        <span>Prendre rendez-vous à l'atelier de Soumbédioune</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Double Vitrine Photographique Réelle (17.jpeg & 10.jpeg) -->
+            <div class="lg:col-span-6">
+                <div class="grid grid-cols-2 gap-5">
+                    
+                    <div class="space-y-5">
+                        <div class="bg-stone-900 rounded-3xl overflow-hidden border-2 border-[#C5A059]/40 aspect-[4/5] shadow-2xl group">
+                            <img src="articles/17.jpeg" alt="Boîtes rondes traditionnelles en cuir touareg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-5 bg-white/5 rounded-2xl border border-stone-800 text-center">
+                            <div class="font-heading text-amber-300 font-bold text-base">Le Cuir Ciselé</div>
+                            <div class="text-stone-400 text-xs mt-1 font-light">Pigments indigo, ocre et safran moulés au soleil</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-5 pt-8">
+                        <div class="p-5 bg-white/5 rounded-2xl border border-stone-800 text-center">
+                            <div class="font-heading text-amber-300 font-bold text-base">Doum & Cauris</div>
+                            <div class="text-stone-400 text-xs mt-1 font-light">Vannerie protectrice ornée de coquillages sacrés</div>
+                        </div>
+                        <div class="bg-stone-900 rounded-3xl overflow-hidden border-2 border-[#C5A059]/40 aspect-[4/5] shadow-2xl group">
+                            <img src="articles/10.jpeg" alt="Panier d'apparat serti de cauris" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Atelier Sur-Mesure & Commandes de Mariage -->
+    <section id="surmesure" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="bg-gradient-to-br from-amber-50/80 via-white to-stone-50 border-2 border-[#C5A059]/40 rounded-3xl p-8 sm:p-14 shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="text-[11px] uppercase font-extrabold tracking-[0.22em] text-[#8F3B23] bg-amber-200/50 px-3.5 py-1 rounded-full border border-amber-300/40">
+                        Création Sur-Mesure & Mariage
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-stone-900 leading-tight">
+                        Une Œuvre Façonnée Spécifiquement pour Vous
+                    </h2>
+                    <p class="text-stone-700 text-sm leading-relaxed font-light">
+                        Pour un mariage d'exception, un écrin de famille ou une pièce architecturale d'intérieur, Maître Boubacar Dicko réalise vos coffres, malles et boîtes aux dimensions précises de votre choix.
+                    </p>
+                    <div class="space-y-2.5 pt-2 text-xs text-stone-800 font-medium">
+                        <div class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-[#8F3B23]"></i>
+                            <span>Gravure personnalisée de vos initiales, dates ou armoiries en caractères Tifinagh</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-[#8F3B23]"></i>
+                            <span>Sélection de la teinte du cuir : rouge saharien, ébène nuit, ocre-safran ou indigo</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-[#8F3B23]"></i>
+                            <span>Finitions des ferrures en laiton doré poli ou cuivre rouge ciselé</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire Interactif Devis Direct -->
+                <div class="lg:col-span-6 bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-lg">
+                    <h3 class="text-base font-bold font-heading text-stone-900 mb-5 flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-[#C5A059]"></i>
+                        <span>Demande de Création Personnalisée</span>
+                    </h3>
+                    
+                    <form id="customQuoteForm" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                            <div>
+                                <label for="quoteName" class="block text-xs font-bold text-stone-700 mb-1">Votre Nom complet *</label>
+                                <input type="text" id="quoteName" required placeholder="ex: Ousmane Ba" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#C5A059]">
+                            </div>
+                            <div>
+                                <label for="quotePhone" class="block text-xs font-bold text-stone-700 mb-1">Téléphone / WhatsApp *</label>
+                                <input type="tel" id="quotePhone" required placeholder="ex: +221 77 000 00 00" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#C5A059]">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                            <div>
+                                <label for="quoteItemType" class="block text-xs font-bold text-stone-700 mb-1">Type d'ouvrage</label>
+                                <select id="quoteItemType" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-stone-300 bg-white focus:outline-none focus:ring-2 focus:ring-[#C5A059]">
+                                    <option value="Grand Coffre de Mariage">Grand Coffre de Mariage</option>
+                                    <option value="Coffre Semainier à Tiroirs">Coffre Semainier à Tiroirs</option>
+                                    <option value="Écrin à Montres ou Bijoux">Écrin à Montres ou Bijoux</option>
+                                    <option value="Panier Jarre Grand Format">Panier Jarre Grand Format</option>
+                                    <option value="Autre Commande Spéciale">Autre Commande Spéciale</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="quoteDimensions" class="block text-xs font-bold text-stone-700 mb-1">Dimensions estimées</label>
+                                <input type="text" id="quoteDimensions" placeholder="ex: 85cm × 45cm × 50cm" class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#C5A059]">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="quoteDetails" class="block text-xs font-bold text-stone-700 mb-1">Précisions (teinte, gravure, délai souhaité)</label>
+                            <textarea id="quoteDetails" rows="3" placeholder="Décrivez votre projet artisanal..." class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#C5A059]"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-whatsapp-luxe w-full py-3.5 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2.5 shadow-md">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span>Transmettre le Projet à l'Artisan</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Art & Entretien du Cuir Saharien -->
+    <section id="entretien" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-[11px] uppercase font-extrabold tracking-[0.25em] text-[#8F3B23] bg-amber-100/80 px-4 py-1 rounded-full border border-amber-200">
+                PATINE & LONGÉVITÉ
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-stone-900 mt-4">
+                Conseils d'Entretien de l'Artisan
+            </h2>
+            <div class="gold-divider">
+                <span class="text-[#C5A059] font-heading">ⵣ</span>
+            </div>
+            <p class="text-stone-600 text-xs sm:text-sm font-light">
+                Les matières naturelles du désert vivent et s'embellissent avec le temps. Voici les gestes simples préconisés par Boubacar Dicko pour entretenir vos pièces.
+            </p>
+        </div>
+
+        <div id="careTipsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Populated via js/app.js -->
+        </div>
+    </section>
+
+    <!-- Témoignages de Collectionneurs -->
+    <section class="bg-stone-100/80 py-20 px-4 sm:px-6 lg:px-8 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-[11px] uppercase font-extrabold tracking-[0.25em] text-[#8F3B23]">
+                    AVIS & RETOURS D'EXPÉRIENCE
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-stone-900 mt-2">
+                    La Confiance de nos Clients & Amateurs d'Art
+                </h2>
+            </div>
+
+            <div id="testimonialsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                <!-- Populated via js/app.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Questions Fréquentes & Expéditions -->
+    <section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
+        <div class="text-center mb-12">
+            <span class="text-[11px] uppercase font-extrabold tracking-[0.25em] text-[#8F3B23] bg-amber-100/80 px-4 py-1 rounded-full border border-amber-200">
+                TRANSPARENCE & SERVICE
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-stone-900 mt-4">
+                Commandes, Expéditions & Retrait
+            </h2>
+        </div>
+
+        <div id="faqContainer" class="space-y-3.5">
+            <!-- Populated via js/app.js -->
+        </div>
+    </section>
+
+    <!-- Pied de Page de Prestige (Footer) -->
+    <footer id="contact" class="bg-[#0B131F] text-white py-20 px-4 sm:px-6 lg:px-8 border-t-2 border-[#C5A059]/40">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Marque & Identité -->
+            <div class="lg:col-span-5 space-y-5">
+                <div class="flex items-center gap-4">
+                    <!-- Emblème -->
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border-2 border-[#C5A059] p-2 flex items-center justify-center shadow-xl shrink-0">
+                        <img src="LOGO1-03.png" alt="Emblème AGHAR" class="h-full w-full object-contain">
+                    </div>
+                    <!-- Nom AGHAR Agrandie -->
+                    <div class="flex flex-col justify-center">
+                        <div class="bg-white px-4 py-2 rounded-2xl w-max shadow-md border border-amber-400/40">
+                            <img src="AGHAR-03.png" alt="AGHAR" class="h-8 sm:h-10 w-auto object-contain">
+                        </div>
+                        <span class="block text-[11px] sm:text-xs uppercase font-extrabold tracking-[0.2em] text-amber-400 mt-2">
+                            Artisanat Touareg • Soumbédioune, Dakar
+                        </span>
+                    </div>
+                </div>
+
+                <p class="text-stone-300 text-xs leading-relaxed font-light max-w-md">
+                    Maison d'artisanat touareg d'exception. Coffres semainiers sculptés, boîtes à bijoux en cuir repoussé et vannerie saharienne. Toutes nos pièces sont fabriquées à la main dans notre atelier de Soumbédioune à Dakar.
+                </p>
+
+                <div class="pt-2 text-xs text-stone-300 space-y-2.5 font-light">
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-[#C5A059] shrink-0"></i>
+                        <span>Atelier N° 42, Village Artisanal de Soumbédioune, Corniche Ouest, Dakar</span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="phone" class="w-4 h-4 text-[#C5A059] shrink-0"></i>
+                        <span>WhatsApp & Appels direct : <strong class="text-white">+221 77 964 00 35</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2.5">
+                        <i data-lucide="clock" class="w-4 h-4 text-[#C5A059] shrink-0"></i>
+                        <span>Accueil à l'atelier tous les jours de 9h00 à 19h30</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liens de Navigation -->
+            <div class="lg:col-span-3 space-y-3">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-[#C5A059] font-heading">Les Créations</h4>
+                <ul class="space-y-2.5 text-xs text-stone-300 font-light">
+                    <li><a href="#creations" class="hover:text-amber-300 transition-colors">Coffres Semainiers en Cuir Ébène</a></li>
+                    <li><a href="#creations" class="hover:text-amber-300 transition-colors">Écrins & Boîtes à Bijoux avec Miroir</a></li>
+                    <li><a href="#creations" class="hover:text-amber-300 transition-colors">Boîtes Rondes Ciselées Sahariennes</a></li>
+                    <li><a href="#creations" class="hover:text-amber-300 transition-colors">Paniers d'Apparat Serti de Cauris</a></li>
+                    <li><a href="#creations" class="hover:text-amber-300 transition-colors">Jarres Géantes en Palmier Doum</a></li>
+                    <li><a href="#surmesure" class="hover:text-amber-300 transition-colors">Commandes Spéciales de Mariage</a></li>
+                </ul>
+            </div>
+
+            <!-- Paiement & Sécurité d'Expédition -->
+            <div class="lg:col-span-4 space-y-4">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-[#C5A059] font-heading">Règlement & Expéditions</h4>
+                <p class="text-xs text-stone-300 leading-relaxed font-light">
+                    Paiements sécurisés via <strong>Wave, Orange Money, Free Money</strong> ou espèces à l'atelier. Expédition internationale sous caisse bois capitonnée par DHL Express ou fret aérien.
+                </p>
+                <div class="flex flex-wrap items-center gap-2 pt-1">
+                    <span class="px-3 py-1 bg-stone-900 border border-stone-700 rounded-lg text-[11px] font-extrabold text-amber-300">Wave</span>
+                    <span class="px-3 py-1 bg-stone-900 border border-stone-700 rounded-lg text-[11px] font-extrabold text-orange-400">Orange Money</span>
+                    <span class="px-3 py-1 bg-stone-900 border border-stone-700 rounded-lg text-[11px] font-extrabold text-emerald-400">Free Money</span>
+                    <span class="px-3 py-1 bg-stone-900 border border-stone-700 rounded-lg text-[11px] font-bold text-stone-300">Espèces / Cash</span>
+                    <span class="px-3 py-1 bg-stone-900 border border-stone-700 rounded-lg text-[11px] font-bold text-stone-300">Virement / Western Union</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-16 pt-6 border-t border-stone-800 text-stone-400 text-xs flex flex-col sm:flex-row items-center justify-between gap-4 font-light">
+            <div>
+                © 2026 AGHAR — Maison d'Artisanat Touareg d'Exception. Tous droits réservés.
+            </div>
+            <div class="flex items-center gap-4 flex-wrap">
+                <span>Maître Boubacar Dicko</span>
+                <span>•</span>
+                <span>Atelier N° 42, Soumbédioune, Dakar</span>
+                <span>•</span>
+                <button onclick="openAdminModal()" class="hover:text-amber-300 text-[#C5A059] font-medium flex items-center gap-1 cursor-pointer" title="Accéder à la gestion du catalogue">
+                    <i data-lucide="lock" class="w-3 h-3"></i>
+                    <span>Espace Artisan</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton WhatsApp Flottant Raffiné -->
+    <a href="https://wa.me/221779640035?text=Bonjour%20Ma%C3%AEtre%20Boubacar,%20je%20vous%20contacte%20depuis%20votre%20site%20AGHAR%20Soumb%C3%A9dioune" target="_blank" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-3.5 rounded-full shadow-2xl transition-all whatsapp-pulse-gold group" title="Échanger en direct avec l'artisan sur WhatsApp">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+        <span class="hidden md:inline text-xs font-bold tracking-wider uppercase">WhatsApp Artisan</span>
+    </a>
+
+    <!-- Panier Glissant (Cart Drawer) -->
+    <div id="cartOverlay" class="fixed inset-0 bg-stone-950/70 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[460px] bg-white z-50 shadow-2xl flex flex-col justify-between translate-x-full border-l border-stone-200">
+        
+        <!-- En-tête Panier -->
+        <div class="p-6 border-b border-stone-200 flex items-center justify-between bg-stone-50">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white border border-[#C5A059]/50 p-1 shadow-sm flex items-center justify-center overflow-hidden shrink-0">
+                    <img src="LOGO1-03.png" alt="Emblème AGHAR" class="w-full h-full object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <img src="AGHAR-03.png" alt="AGHAR" class="h-5 w-auto object-contain object-left">
+                    <span class="text-[10px] font-bold text-stone-500 uppercase tracking-widest mt-0.5">Panier Artisanal</span>
+                </div>
+                <span class="cart-badge bg-[#8F3B23] text-white text-xs font-bold px-2.5 py-0.5 rounded-full ml-1">0</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="clearCartBtn" onclick="clearCart()" class="hidden px-2.5 py-1 text-[11px] font-bold text-red-600 hover:bg-red-50 rounded-lg border border-red-200 transition-colors items-center gap-1" title="Vider tout le panier">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                    <span>Vider</span>
+                </button>
+                <button id="closeCartBtn" class="p-2 rounded-xl text-stone-400 hover:text-stone-700 hover:bg-stone-200/60 transition-colors" aria-label="Fermer le panier">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Liste des Articles du Panier -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-3.5">
+            <!-- Populated via js/app.js -->
+        </div>
+
+        <!-- Notice Panier Vide -->
+        <div id="cartEmptyNotice" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
+            <div class="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center text-stone-400 mb-4">
+                <i data-lucide="shopping-bag" class="w-8 h-8"></i>
+            </div>
+            <h4 class="font-bold text-stone-800 text-sm font-heading">Votre panier est vide</h4>
+            <p class="text-xs text-stone-500 mt-1.5 max-w-xs font-light">Explorez nos coffres semainiers, boîtes en cuir ciselé et jarres de Soumbédioune.</p>
+            <button onclick="toggleCartDrawer()" class="mt-5 px-5 py-2.5 rounded-xl btn-luxury-primary text-white text-xs font-bold uppercase tracking-wider">
+                Consulter la Collection
+            </button>
+        </div>
+
+        <!-- Pied du Panier (Calcul & Commande WhatsApp Directe) -->
+        <div class="p-6 border-t border-stone-200 bg-stone-50 space-y-4">
+            <div class="space-y-1.5 text-xs text-stone-600">
+                <div class="flex items-center justify-between">
+                    <span>Sous-total articles :</span>
+                    <span id="cartSubtotal" class="font-bold text-stone-900">0 FCFA</span>
+                </div>
+                <div class="flex items-center justify-between text-stone-500 text-[11px]">
+                    <span>Disponibilité à l'Atelier N° 42 :</span>
+                    <span class="text-emerald-700 font-semibold">Confirmée en direct</span>
+                </div>
+                <div class="flex items-center justify-between text-base font-extrabold text-stone-900 pt-3 border-t border-stone-200">
+                    <span>Total Estimé :</span>
+                    <span id="cartTotal" class="text-xl text-[#8F3B23] font-black">0 FCFA</span>
+                </div>
+            </div>
+
+            <!-- Bouton Commande WhatsApp Immédiate -->
+            <button id="cartCheckoutWhatsAppBtn" onclick="checkoutViaWhatsApp()" class="btn-whatsapp-luxe w-full py-4 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2.5 shadow-xl">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Commander via WhatsApp (+221 77 964 00 35)</span>
+            </button>
+
+            <p class="text-[10px] text-center text-stone-400 leading-relaxed font-light">
+                Un message avec la liste de vos pièces et le montant exact est automatiquement transmis à Boubacar Dicko.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modale Galerie / Fiche d'Authenticité de la Pièce -->
+    <div id="productDetailModal" class="fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="modal-luxury-content bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl border border-stone-200 relative my-8">
+            
+            <!-- Bouton Fermer -->
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-stone-950/75 hover:bg-stone-950 text-white flex items-center justify-center transition-colors shadow-lg">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Visuel Agrandie Format Portrait 4/5 -->
+                <div id="modalProductImage" class="w-full aspect-[4/5] md:aspect-auto md:h-full bg-[#EDE5D8] flex items-center justify-center overflow-hidden">
+                    <!-- Populated dynamically with real photo -->
+                </div>
+
+                <!-- Détails d'Authenticité de la Création -->
+                <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                    <div>
+                        <div class="flex items-center gap-2.5 mb-2.5">
+                            <span id="modalProductBadge" class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#C5A059] text-stone-950">
+                                Pièce de Maître
+                            </span>
+                            <span id="modalProductCategory" class="text-xs font-bold text-[#8F3B23]">
+                                Coffres & Malles
+                            </span>
+                        </div>
+
+                        <h3 id="modalProductTitle" class="text-xl sm:text-2xl font-bold font-heading text-stone-900 leading-snug">
+                            Titre de la création
+                        </h3>
+
+                        <div id="modalProductPrice" class="text-2xl font-black text-[#0B131F] mt-2.5">
+                            0 FCFA
+                        </div>
+
+                        <p id="modalProductDesc" class="text-stone-600 text-xs sm:text-sm mt-3.5 leading-relaxed font-light">
+                            Description détaillée de l'objet d'art touareg.
+                        </p>
+
+                        <!-- Table des Spécifications Techniques -->
+                        <div class="mt-6 space-y-2 border-t border-stone-100 pt-4 text-xs font-light">
+                            <div class="flex justify-between py-1.5 border-b border-stone-100">
+                                <span class="text-stone-400">Dimensions :</span>
+                                <span id="modalProductDimensions" class="font-semibold text-stone-800 text-right">-</span>
+                            </div>
+                            <div class="flex justify-between py-1.5 border-b border-stone-100">
+                                <span class="text-stone-400">Matières premières :</span>
+                                <span id="modalProductMaterials" class="font-semibold text-stone-800 text-right">-</span>
+                            </div>
+                            <div class="flex justify-between py-1.5 border-b border-stone-100">
+                                <span class="text-stone-400">Temps de façonnage :</span>
+                                <span id="modalProductCraftTime" class="font-semibold text-stone-800 text-right">-</span>
+                            </div>
+                            <div class="flex justify-between py-1.5 border-b border-stone-100">
+                                <span class="text-stone-400">Poids approximatif :</span>
+                                <span id="modalProductWeight" class="font-semibold text-stone-800 text-right">-</span>
+                            </div>
+                            <div class="flex justify-between py-1.5">
+                                <span class="text-stone-400">Disponibilité :</span>
+                                <span id="modalProductStock" class="font-bold text-emerald-700 text-right">En stock à Soumbédioune</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions Modale -->
+                    <div class="space-y-2.5 pt-2">
+                        <button id="modalAddCartBtn" class="btn-luxury-primary w-full py-3.5 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all active:scale-95">
+                            <i data-lucide="shopping-bag" class="w-4 h-4 text-amber-300"></i>
+                            <span>Ajouter au Panier</span>
+                        </button>
+                        <button id="modalRemoveCartBtn" class="w-full py-2.5 rounded-xl text-xs font-bold text-red-600 hover:bg-red-50 border border-red-200 transition-colors hidden items-center justify-center gap-2">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            <span>Retirer cette création du panier</span>
+                        </button>
+                        <button id="modalWhatsAppBtn" class="btn-whatsapp-luxe w-full py-3.5 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all active:scale-95">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Commander directement sur WhatsApp</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modale Espace Propriétaire & Gestionnaire de Catalogue -->
+    <div id="adminModal" class="fixed inset-0 z-50 bg-stone-950/85 backdrop-blur-md hidden items-center justify-center p-3 sm:p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl border border-stone-300 relative my-6 max-h-[92vh] flex flex-col">
+            
+            <!-- En-tête Modale Admin -->
+            <div class="p-5 sm:p-6 bg-[#0B131F] text-white flex items-center justify-between border-b border-[#C5A059]/40 shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/10 border border-[#C5A059] p-1 flex items-center justify-center shrink-0">
+                        <img src="LOGO1-03.png" alt="Emblème" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="text-base font-extrabold font-heading text-white">Espace Artisan & Gestionnaire</h3>
+                            <span class="px-2 py-0.5 rounded text-[9px] font-black bg-[#C5A059] text-[#0B131F] uppercase">Maître Boubacar Dicko</span>
+                        </div>
+                        <p class="text-xs text-stone-300 font-light mt-0.5">Atelier N° 42 • Village Artisanal de Soumbédioune</p>
+                    </div>
+                </div>
+                <button onclick="closeAdminModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- ÉCRAN 1 : Déverrouillage par Code PIN -->
+            <div id="adminPinSection" class="p-8 sm:p-12 text-center space-y-6 my-auto">
+                <div class="w-16 h-16 rounded-full bg-amber-50 border-2 border-[#C5A059] flex items-center justify-center text-[#8F3B23] mx-auto shadow-md">
+                    <i data-lucide="shield-lock" class="w-8 h-8"></i>
+                </div>
+                <div class="space-y-1">
+                    <h4 class="text-xl font-bold font-heading text-stone-900">Accès Réservé au Propriétaire</h4>
+                    <p class="text-xs text-stone-500 max-w-sm mx-auto font-light">
+                        Veuillez saisir votre code PIN pour ajouter de nouvelles créations ou retirer des articles vendus.
+                    </p>
+                </div>
+                <form onsubmit="handleAdminLogin(event)" class="max-w-xs mx-auto space-y-4">
+                    <input type="password" id="adminPinInput" placeholder="Code PIN (ex: aghar2026)" class="w-full text-center px-4 py-3 text-sm font-bold tracking-widest bg-stone-50 border-2 border-stone-300 rounded-xl focus:border-[#C5A059] focus:outline-none transition-colors">
+                    <button type="submit" class="btn-luxury-primary w-full py-3 rounded-xl text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md cursor-pointer">
+                        <i data-lucide="unlock" class="w-4 h-4 text-amber-300"></i>
+                        <span>Déverrouiller le Gestionnaire</span>
+                    </button>
+                    <p class="text-[10px] text-stone-400 font-light">
+                        Code d'accès par défaut : <code>aghar2026</code> ou WhatsApp <code>779640035</code>
+                    </p>
+                </form>
+            </div>
+
+            <!-- ÉCRAN 2 : Tableau de Bord d'Administration -->
+            <div id="adminDashboardSection" class="hidden flex-1 overflow-y-auto flex flex-col">
+                
+                <!-- Barre d'Onglets -->
+                <div class="flex items-center justify-between border-b border-stone-200 px-6 pt-3 bg-stone-50 shrink-0">
+                    <div class="flex items-center gap-6 text-xs uppercase font-bold tracking-wider">
+                        <button onclick="switchAdminTab('add')" data-tab="add" class="admin-tab-btn active pb-3 flex items-center gap-2 cursor-pointer">
+                            <i data-lucide="plus-circle" class="w-4 h-4 text-[#8F3B23]"></i>
+                            <span>Ajouter un Produit</span>
+                        </button>
+                        <button onclick="switchAdminTab('manage')" data-tab="manage" class="admin-tab-btn pb-3 flex items-center gap-2 cursor-pointer">
+                            <i data-lucide="layers" class="w-4 h-4 text-[#8F3B23]"></i>
+                            <span>Gérer le Catalogue (<span id="adminProductCountBadge">17</span>)</span>
+                        </button>
+                        <button onclick="switchAdminTab('backup')" data-tab="backup" class="admin-tab-btn pb-3 flex items-center gap-2 cursor-pointer">
+                            <i data-lucide="download-cloud" class="w-4 h-4 text-[#8F3B23]"></i>
+                            <span>Sauvegarde & Export</span>
+                        </button>
+                    </div>
+                    <button onclick="handleAdminLogout()" class="text-xs text-stone-400 hover:text-stone-700 pb-3 font-medium flex items-center gap-1 cursor-pointer" title="Verrouiller la session">
+                        <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+                        <span class="hidden sm:inline">Déconnexion</span>
+                    </button>
+                </div>
+
+                <!-- ONGLET 1 : Formulaire d'Ajout d'une Création -->
+                <div id="adminTabAdd" class="p-6 sm:p-8 space-y-6">
+                    <form onsubmit="handleNewProductSubmit(event)" class="space-y-5">
+                        
+                        <!-- Ligne Nom & Catégorie -->
+                        <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+                            <div class="sm:col-span-8 space-y-1.5">
+                                <label class="text-xs font-bold text-stone-700 uppercase tracking-wider">
+                                    Nom de la Création *
+                                </label>
+                                <input type="text" id="newProdName" required placeholder="Ex: Grand Coffre Royal en Cuir Rouge Saharien" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#C5A059] focus:bg-white">
+                            </div>
+                            <div class="sm:col-span-4 space-y-1.5">
+                                <label class="text-xs font-bold text-stone-700 uppercase tracking-wider">
+                                    Catégorie *
+                                </label>
+                                <select id="newProdCategory" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-bold text-stone-900 focus:outline-none focus:border-[#C5A059]">
+                                    <option value="coffres" selected>📦 Coffres & Malles</option>
+                                    <option value="boites">👝 Boîtes & Écrins en Cuir</option>
+                                    <option value="paniers">🧺 Paniers & Jarres</option>
+                                    <option value="surmesure">✨ Sur-Mesure</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Ligne Prix & Badge -->
+                        <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+                            <div class="sm:col-span-6 space-y-1.5">
+                                <label class="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center justify-between">
+                                    <span>Prix Atelier en FCFA *</span>
+                                    <span class="text-[10px] text-[#8F3B23] font-normal">Chiffre sans espace</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="number" id="newProdPrice" required min="1000" step="500" placeholder="Ex: 85000" class="w-full pl-3.5 pr-16 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-black text-stone-900 focus:outline-none focus:border-[#C5A059] focus:bg-white">
+                                    <span class="absolute right-3.5 top-2.5 text-xs font-bold text-stone-400">FCFA</span>
+                                </div>
+                            </div>
+                            <div class="sm:col-span-6 space-y-1.5">
+                                <label class="text-xs font-bold text-stone-700 uppercase tracking-wider">
+                                    Badge d'Apparat (Optionnel)
+                                </label>
+                                <select id="newProdBadge" class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-900 focus:outline-none focus:border-[#C5A059]">
+                                    <option value="Nouveauté Atelier" selected>Nouveauté Atelier</option>
+                                    <option value="Pièce de Maître">Pièce de Maître</option>
+                                    <option value="Coup de Cœur">Coup de Cœur</option>
+                                    <option value="Pièce Unique">Pièce Unique</option>
+                                    <option value="Collection Saharienne">Collection Saharienne</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Zone Téléversement Photo -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center justify-between">
+                                <span>Photographie de la Pièce *</span>
+                                <span class="text-[10px] text-stone-400">Depuis votre appareil ou fichier</span>
+                            </label>
+                            
+                            <div class="admin-dropzone p-5 rounded-2xl text-center relative" onclick="document.getElementById('adminProductFileInput').click()">
+                                <input type="file" id="adminProductFileInput" accept="image/*" class="hidden" onchange="handleProductImageUpload(event)">
+                                
+                                <div id="adminUploadPlaceholder" class="space-y-2">
+                                    <div class="w-12 h-12 rounded-full bg-white border border-[#C5A059]/40 flex items-center justify-center text-[#8F3B23] mx-auto shadow-sm">
+                                        <i data-lucide="image-plus" class="w-6 h-6"></i>
+                                    </div>
+                                    <div class="text-xs font-bold text-stone-800">
+                                        Cliquez ici pour sélectionner une photo depuis votre appareil
+                                    </div>
+                                    <div class="text-[11px] text-stone-400 font-light">
+                                        Format JPG, PNG ou WEBP (Idéalement au format portrait 4/5)
+                                    </div>
+                                </div>
+
+                                <!-- Aperçu Image Chargée -->
+                                <div id="adminImagePreviewWrap" class="hidden flex items-center justify-center gap-4">
+                                    <img id="adminImagePreview" src="" alt="Aperçu" class="w-24 h-28 object-cover rounded-xl border-2 border-[#C5A059] shadow-md">
+                                    <div class="text-left space-y-1">
+                                        <span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+                                            <i data-lucide="check" class="w-4 h-4"></i> Photo prête à être publiée
+                                        </span>
+                                        <button type="button" onclick="event.stopPropagation(); clearAdminImageUpload()" class="text-[11px] text-red-600 hover:underline font-semibold block cursor-pointer">
+                                            Changer la photo
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ou saisie d'un chemin de fichier manuel -->
+                            <div class="pt-1 flex items-center gap-2">
+                                <span class="text-[10px] text-stone-400 shrink-0">Ou chemin d'accès :</span>
+                                <input type="text" id="newProdManualImage" placeholder="Ex: articles/1.jpeg ou lien internet" class="w-full px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-lg text-[11px] text-stone-700 focus:outline-none focus:border-[#C5A059]">
+                            </div>
+                        </div>
+
+                        <!-- Ligne Dimensions & Matières -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-bold text-stone-700 uppercase tracking-wider">Dimensions</label>
+                                <input type="text" id="newProdDimensions" placeholder="Ex: Hauteur: 45 cm × Diamètre: 30 cm" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#C5A059]">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-bold text-stone-700 uppercase tracking-wider">Matières Premières</label>
+                                <input type="text" id="newProdMaterials" placeholder="Ex: Cuir de chèvre teinté, acacia, laiton ciselé" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#C5A059]">
+                            </div>
+                        </div>
+
+                        <!-- Ligne Temps de Façonnage -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-stone-700 uppercase tracking-wider">Temps de Travail Artisanal</label>
+                            <input type="text" id="newProdCraftTime" placeholder="Ex: 12 jours de façon manuelle" class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#C5A059]">
+                        </div>
+
+                        <!-- Descriptions -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-stone-700 uppercase tracking-wider">Description Courte</label>
+                            <input type="text" id="newProdShortDesc" placeholder="Bref résumé de la pièce pour le catalogue..." class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#C5A059]">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-bold text-stone-700 uppercase tracking-wider">Description Détaillée & Histoire de l'Ouvrage</label>
+                            <textarea id="newProdDescription" rows="3" placeholder="Racontez la méthode de tannage, la signification des motifs touaregs..." class="w-full px-3.5 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 focus:outline-none focus:border-[#C5A059]"></textarea>
+                        </div>
+
+                        <!-- Bouton Enregistrer -->
+                        <div class="pt-3 border-t border-stone-200 flex items-center justify-end gap-3">
+                            <button type="button" onclick="closeAdminModal()" class="px-5 py-3 rounded-xl border border-stone-300 text-xs font-bold text-stone-700 hover:bg-stone-100 cursor-pointer">
+                                Annuler
+                            </button>
+                            <button type="submit" class="btn-luxury-primary px-8 py-3 rounded-xl text-xs font-extrabold uppercase tracking-wider shadow-lg flex items-center gap-2 cursor-pointer">
+                                <i data-lucide="check" class="w-4 h-4 text-[#C5A059]"></i>
+                                <span>Publier cette Création dans la Boutique</span>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- ONGLET 2 : Liste & Gestion des Créations (Retrait) -->
+                <div id="adminTabManage" class="hidden p-6 sm:p-8 space-y-4">
+                    <div class="flex items-center justify-between pb-2 border-b border-stone-200">
+                        <div>
+                            <h4 class="text-sm font-bold font-heading text-stone-900">Créations Actuellement en Vente</h4>
+                            <p class="text-xs text-stone-500 font-light">Cliquez sur « Retirer » pour masquer un article vendu ou indisponible.</p>
+                        </div>
+                        <button onclick="switchAdminTab('add')" class="btn-luxury-gold px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 shadow-sm cursor-pointer">
+                            <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                            <span>Nouveau Produit</span>
+                        </button>
+                    </div>
+
+                    <div id="adminProductsList" class="space-y-2.5 max-h-[50vh] overflow-y-auto pr-1">
+                        <!-- Rendu dynamique via renderAdminProductsList() -->
+                    </div>
+                </div>
+
+                <!-- ONGLET 3 : Sauvegarde & Exportation data.js -->
+                <div id="adminTabBackup" class="hidden p-6 sm:p-8 space-y-6">
+                    <div class="space-y-1.5">
+                        <h4 class="text-sm font-bold font-heading text-stone-900">Pérenniser vos Modifications dans le Code</h4>
+                        <p class="text-xs text-stone-600 font-light leading-relaxed">
+                            Vos ajouts et retraits sont automatiquement conservés dans ce navigateur. Pour enregistrer définitivement le catalogue dans les fichiers du projet ou pour mettre en ligne sur un serveur :
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-5 bg-amber-50/70 border border-[#C5A059]/50 rounded-2xl space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-white border border-[#C5A059] flex items-center justify-center text-[#8F3B23]">
+                                <i data-lucide="download" class="w-5 h-5"></i>
+                            </div>
+                            <h5 class="text-xs font-bold font-heading text-stone-900">Télécharger data.js à jour</h5>
+                            <p class="text-[11px] text-stone-600 font-light leading-relaxed">
+                                Génère le fichier JavaScript complet contenant toutes vos pièces. Remplacez simplement le fichier <code>AGHAR/js/data.js</code> sur votre ordinateur.
+                            </p>
+                            <button onclick="exportDataJsFile()" class="btn-luxury-primary w-full py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-sm cursor-pointer">
+                                <i data-lucide="file-code" class="w-4 h-4 text-amber-300"></i>
+                                <span>Télécharger data.js</span>
+                            </button>
+                        </div>
+
+                        <div class="p-5 bg-stone-50 border border-stone-200 rounded-2xl space-y-3">
+                            <div class="w-10 h-10 rounded-xl bg-white border border-stone-300 flex items-center justify-center text-stone-600">
+                                <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+                            </div>
+                            <h5 class="text-xs font-bold font-heading text-stone-900">Restaurer le Catalogue d'Origine</h5>
+                            <p class="text-[11px] text-stone-600 font-light leading-relaxed">
+                                Réinitialise la boutique avec les 17 créations photographiées d'origine de l'atelier de Soumbédioune.
+                            </p>
+                            <button onclick="resetCatalogToDefault()" class="w-full py-2.5 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-200/60 text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer">
+                                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                                <span>Réinitialiser les 17 Pièces</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
