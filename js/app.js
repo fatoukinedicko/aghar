@@ -676,16 +676,106 @@ function handleCustomQuoteSubmit(e) {
     e.target.reset();
 }
 
-// Testimonials Renderer
+// Testimonials & Visitor Comments Renderer
+function getVisitorComments() {
+    try {
+        const raw = localStorage.getItem('aghar_visitor_comments');
+        return raw ? JSON.parse(raw) : [];
+    } catch (err) {
+        return [];
+    }
+}
+
+function saveVisitorComments(list) {
+    try {
+        localStorage.setItem('aghar_visitor_comments', JSON.stringify(list));
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+function toggleVisitorCommentForm() {
+    const wrap = document.getElementById('visitorCommentFormWrap');
+    if (!wrap) return;
+    wrap.classList.toggle('hidden');
+    if (!wrap.classList.contains('hidden')) {
+        const input = document.getElementById('commentAuthor');
+        if (input) input.focus();
+    }
+}
+
+function handleVisitorCommentSubmit(e) {
+    e.preventDefault();
+    const authorInput = document.getElementById('commentAuthor');
+    const cityInput = document.getElementById('commentCity');
+    const ratingInput = document.getElementById('commentRating');
+    const textInput = document.getElementById('commentText');
+
+    const author = (authorInput?.value || '').trim();
+    const city = (cityInput?.value || '').trim() || 'Visiteur AGHAR';
+    const rating = Math.min(5, Math.max(1, parseInt(ratingInput?.value || '5', 10)));
+    const text = (textInput?.value || '').trim();
+
+    if (!author || !text) {
+        showToast('Veuillez renseigner votre nom et votre commentaire.', 'info');
+        return;
+    }
+
+    const months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+    const now = new Date();
+    const dateLabel = `${months[now.getMonth()]} ${now.getFullYear()}`;
+
+    const newComment = {
+        id: 'vc-' + Date.now(),
+        author,
+        city,
+        rating,
+        text,
+        date: dateLabel,
+        isVisitor: true
+    };
+
+    const existing = getVisitorComments();
+    existing.unshift(newComment);
+    saveVisitorComments(existing);
+
+    e.target.reset();
+    const wrap = document.getElementById('visitorCommentFormWrap');
+    if (wrap) wrap.classList.add('hidden');
+
+    renderTestimonials();
+    showToast('Merci ! Votre commentaire a été publié sur la page.', 'success');
+}
+
+function deleteVisitorComment(commentId) {
+    const existing = getVisitorComments().filter(c => c.id !== commentId);
+    saveVisitorComments(existing);
+    renderTestimonials();
+    showToast('Commentaire supprimé.', 'info');
+}
+
 function renderTestimonials() {
     const container = document.getElementById('testimonialsContainer');
     if (!container) return;
 
-    container.innerHTML = TESTIMONIALS.map((t, idx) => `
-        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+    const visitorComments = getVisitorComments();
+    const allReviews = [...visitorComments, ...TESTIMONIALS];
+
+    container.innerHTML = allReviews.map((t, idx) => `
+        <div class="bg-white p-5 rounded-2xl border ${t.isVisitor ? 'border-[#C5A059]' : 'border-stone-200'} shadow-sm flex flex-col justify-between relative">
             <div>
-                <div class="flex items-center gap-1 text-[#C5A059] mb-2.5">
-                    ${Array(t.rating).fill('<i data-lucide="star" class="w-3.5 h-3.5 fill-[#C5A059]"></i>').join('')}
+                <div class="flex items-center justify-between gap-2 mb-2.5">
+                    <div class="flex items-center gap-1 text-[#C5A059]">
+                        ${Array(t.rating).fill('<i data-lucide="star" class="w-3.5 h-3.5 fill-[#C5A059]"></i>').join('')}
+                    </div>
+                    ${t.isVisitor ? `
+                        <div class="flex items-center gap-1.5">
+                            <span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-[#0F141C] text-[#C5A059]">Avis Visiteur</span>
+                            <button type="button" onclick="deleteVisitorComment('${t.id}')" class="text-stone-400 hover:text-red-600 p-0.5" title="Supprimer ce commentaire">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    ` : ''}
                 </div>
                 <p id="testi-text-${idx}" class="text-stone-700 text-xs sm:text-sm italic leading-relaxed line-clamp-2">
                     « ${t.text} »
@@ -703,6 +793,8 @@ function renderTestimonials() {
             </div>
         </div>
     `).join('');
+
+    lucide.createIcons();
 }
 
 // Care Tips Renderer
