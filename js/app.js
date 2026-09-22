@@ -1015,7 +1015,7 @@ function exportDataJsFile() {
  * AGHAR - Artisanat Touareg d'Exception
  * Base de données des créations artisanales réelles de l'Atelier
  * Fichier exporté le ${new Date().toLocaleDateString('fr-FR')}
- * Atelier N° 42, Village Artisanal de Soumbédioune, Dakar
+ * Atelier d'Art N° 18B, Village Artisanal de Soumbédioune, Dakar
  */
 
 const SHOP_CONFIG = ${configStr};

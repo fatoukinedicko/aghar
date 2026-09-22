@@ -1,7 +1,7 @@
 /**
  * AGHAR - Artisanat Touareg d'Exception
  * Base de données des créations artisanales réelles de l'Atelier
- * Atelier : N° 42, Village Artisanal de Soumbédioune, Dakar
+ * Atelier : Atelier d'Art N° 18B, Village Artisanal de Soumbédioune, Dakar
  * Contact WhatsApp : +221 77 964 00 35
  */
 
@@ -12,7 +12,7 @@ const SHOP_CONFIG = {
         name: "Boubacar Dicko",
         title: "Artisan Forgeron & Maroquinier Touareg (Inaden)",
         origin: "Originaire du Sahara (Massif de l'Aïr / Agadez)",
-        workshop: "Atelier N° 42, Village Artisanal de Soumbédioune, Corniche Ouest, Dakar, Sénégal",
+        workshop: "Atelier d'Art N° 18B, Village Artisanal de Soumbédioune, Corniche Ouest, Dakar, Sénégal",
         phone: "+221 77 964 00 35",
         phoneRaw: "221779640035",
         experienceYears: "Plus de 28 années de savoir-faire transmis de père en fils",
@@ -426,7 +426,7 @@ const CARE_TIPS = [
 const FAQS = [
     {
         q: "Où se trouve l'atelier de l'artisan pour voir les articles en vrai ?",
-        a: "Notre atelier est situé au sein du réputé **Village Artisanal de Soumbédioune** (Atelier N° 42), sur la Corniche Ouest à Dakar, Sénégal. Vous êtes les bienvenus tous les jours de 9h à 19h30 pour rencontrer Boubacar Dicko et observer le travail du cuir et du bois en direct."
+        a: "Notre atelier est situé au sein du réputé **Village Artisanal de Soumbédioune** (Atelier d'Art N° 18B), sur la Corniche Ouest à Dakar, Sénégal. Vous êtes les bienvenus tous les jours de 9h à 19h30 pour rencontrer Boubacar Dicko et observer le travail du cuir et du bois en direct."
     },
     {
         q: "Comment fonctionne la commande via WhatsApp ?",

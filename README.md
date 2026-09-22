@@ -1,5 +1,5 @@
 # AGHAR - Maison d'Artisanat Touareg d'Exception
-### Atelier N° 42, Village Artisanal de Soumbédioune, Dakar (Sénégal)
+### Atelier d'Art N° 18B, Village Artisanal de Soumbédioune, Dakar (Sénégal)
 **Boubacar Dicko** • Contact WhatsApp : `+221 77 964 00 35`
 
 ---
