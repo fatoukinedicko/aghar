@@ -1250,20 +1250,40 @@
                         </div>
                     </div>
 
-                    <!-- Actions Modale -->
-                    <div class="space-y-2.5 pt-2">
-                        <button id="modalAddCartBtn" class="btn-luxury-primary w-full py-3.5 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all active:scale-95">
-                            <i data-lucide="shopping-bag" class="w-4 h-4 text-amber-300"></i>
-                            <span>Ajouter au Panier</span>
-                        </button>
+                    <!-- Actions Modale : Panier Classique & WhatsApp Direct -->
+                    <div class="space-y-3 pt-2">
+                        <!-- Option 1 : Panier Classique -->
+                        <div>
+                            <button id="modalAddCartBtn" class="btn-luxury-primary w-full py-3.5 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all active:scale-95">
+                                <i data-lucide="shopping-bag" class="w-4 h-4 text-amber-300"></i>
+                                <span>Ajouter au Panier</span>
+                            </button>
+                            <p class="text-[10px] text-stone-400 text-center mt-1 font-light">
+                                Idéal pour cumuler plusieurs créations et valider l'ensemble en un seul geste.
+                            </p>
+                        </div>
+
                         <button id="modalRemoveCartBtn" class="w-full py-2.5 rounded-xl text-xs font-bold text-red-600 hover:bg-red-50 border border-red-200 transition-colors hidden items-center justify-center gap-2">
                             <i data-lucide="trash-2" class="w-4 h-4"></i>
                             <span>Retirer cette création du panier</span>
                         </button>
-                        <button id="modalWhatsAppBtn" class="btn-whatsapp-luxe w-full py-3.5 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all active:scale-95">
-                            <i data-lucide="message-circle" class="w-4 h-4"></i>
-                            <span>Commander directement sur WhatsApp</span>
-                        </button>
+
+                        <div class="relative flex py-0.5 items-center">
+                            <div class="flex-grow border-t border-stone-200"></div>
+                            <span class="flex-shrink mx-3 text-[10px] uppercase font-bold text-stone-400 tracking-widest">ou commande immédiate</span>
+                            <div class="flex-grow border-t border-stone-200"></div>
+                        </div>
+
+                        <!-- Option 2 : Commande Directe WhatsApp -->
+                        <div>
+                            <button id="modalWhatsAppBtn" class="btn-whatsapp-luxe w-full py-3.5 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all active:scale-95">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Commander directement sur WhatsApp</span>
+                            </button>
+                            <p class="text-[10px] text-stone-400 text-center mt-1 font-light">
+                                Échange direct avec Maître Boubacar Dicko (+221 77 964 00 35) pour confirmation immédiate.
+                            </p>
+                        </div>
                     </div>
 
                 </div>

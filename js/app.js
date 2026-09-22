@@ -162,27 +162,43 @@ function renderProducts() {
                         </p>
                     </div>
 
-                    <div class="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between gap-3">
-                        <div>
-                            <div class="text-[9px] uppercase tracking-widest text-stone-400 font-bold">Prix Atelier</div>
-                            <div class="text-base sm:text-lg font-black text-[#0B131F]">
-                                ${formatPrice(product.priceFCFA)}
+                    <div class="mt-5 pt-4 border-t border-stone-100 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-[9px] uppercase tracking-widest text-stone-400 font-bold">Prix Atelier Direct</div>
+                                <div class="text-base sm:text-lg font-black text-[#0B131F] font-heading">
+                                    ${formatPrice(product.priceFCFA)}
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <button onclick="addToCart('${product.id}')" class="btn-luxury-primary px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 active:scale-95 shadow-sm" title="${inCart ? 'Augmenter la quantité au panier' : 'Ajouter au panier'}">
-                                <i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-amber-300"></i>
-                                <span>${inCart ? `Ajouté (${inCart.quantity})` : 'Ajouter au panier'}</span>
-                            </button>
                             ${inCart ? `
-                                <button onclick="removeFromCart('${product.id}')" class="p-2 rounded-xl text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 active:scale-95 transition-all shadow-xs" title="Retirer cette création du panier">
-                                    <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                </button>
-                            ` : ''}
-                            <button onclick="orderDirectWhatsApp('${product.id}')" class="btn-whatsapp-luxe p-2 rounded-xl text-white active:scale-95 shadow-sm" title="Commander tout de suite sur WhatsApp (+221 77 964 00 35)">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full flex items-center gap-1">
+                                    <i data-lucide="check" class="w-3 h-3"></i> Au panier (${inCart.quantity})
+                                </span>
+                            ` : `
+                                <span class="text-[10px] text-stone-400 font-medium bg-stone-100 px-2 py-0.5 rounded-full">Pièce d'art</span>
+                            `}
+                        </div>
+
+                        <!-- 2 Boutons Équilibrés : Panier Classique + WhatsApp Direct -->
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="addToCart('${product.id}')" class="btn-luxury-primary py-2.5 px-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 active:scale-95 shadow-sm" title="${inCart ? 'Augmenter la quantité au panier' : 'Ajouter au panier'}">
+                                <i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-amber-300 shrink-0"></i>
+                                <span class="truncate">${inCart ? `Ajouté (${inCart.quantity})` : 'Au Panier'}</span>
+                            </button>
+                            <button onclick="orderDirectWhatsApp('${product.id}')" class="btn-whatsapp-luxe py-2.5 px-2 rounded-xl text-white text-xs font-bold flex items-center justify-center gap-1.5 active:scale-95 shadow-sm" title="Commander directement sur WhatsApp (+221 77 964 00 35)">
+                                <i data-lucide="message-circle" class="w-3.5 h-3.5 shrink-0"></i>
+                                <span class="truncate">WhatsApp</span>
                             </button>
                         </div>
+
+                        ${inCart ? `
+                            <div class="flex items-center justify-center pt-0.5">
+                                <button onclick="removeFromCart('${product.id}')" class="text-[11px] text-red-600 hover:text-red-700 hover:underline flex items-center gap-1 font-semibold transition-colors">
+                                    <i data-lucide="trash-2" class="w-3 h-3"></i>
+                                    <span>Retirer du panier</span>
+                                </button>
+                            </div>
+                        ` : ''}
                     </div>
                 </div>
             </article>
