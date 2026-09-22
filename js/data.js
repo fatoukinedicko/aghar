@@ -9,8 +9,8 @@ const SHOP_CONFIG = {
     storeName: "AGHAR",
     tagline: "L'artisanat touareg d'exception façonné à la main",
     artisan: {
-        name: "Maître Artisan Boubacar Dicko",
-        title: "Maître Forgeron & Maroquinier Touareg (Inaden)",
+        name: "Boubacar Dicko",
+        title: "Artisan Forgeron & Maroquinier Touareg (Inaden)",
         origin: "Originaire du Sahara (Massif de l'Aïr / Agadez)",
         workshop: "Atelier N° 42, Village Artisanal de Soumbédioune, Corniche Ouest, Dakar, Sénégal",
         phone: "+221 77 964 00 35",

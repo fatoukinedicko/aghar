@@ -1,11 +1,11 @@
 # AGHAR - Maison d'Artisanat Touareg d'Exception
 ### Atelier N° 42, Village Artisanal de Soumbédioune, Dakar (Sénégal)
-**Maître Artisan Boubacar Dicko** • Contact WhatsApp : `+221 77 964 00 35`
+**Boubacar Dicko** • Contact WhatsApp : `+221 77 964 00 35`
 
 ---
 
 ## 🌟 Présentation de la Boutique
-Boutique e-commerce et vitrine d'artisanat saharien haut de gamme dédiée aux créations de Maître Boubacar Dicko :
+Boutique e-commerce et vitrine d'artisanat saharien haut de gamme dédiée aux créations de Boubacar Dicko :
 - Coffres semainiers et d'ébénisterie d'apparat en cuir gravé et bois noble
 - Boîtes et coffrets de voyage en cuir de chèvre marbré et tanné végétal
 - Paniers d'apparat en vannerie de doum serrée et cauris traditionnels

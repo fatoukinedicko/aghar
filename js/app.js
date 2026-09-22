@@ -490,7 +490,7 @@ function checkoutViaWhatsApp() {
     const { totalFCFA } = calculateCartTotals();
     const formattedTotal = formatPrice(totalFCFA);
 
-    let message = `Bonjour Maître Boubacar (Atelier AGHAR - Soumbédioune),\n\n`;
+    let message = `Bonjour Boubacar (Atelier AGHAR - Soumbédioune),\n\n`;
     message += `Je souhaite passer commande des articles suivants vus sur votre boutique :\n`;
     message += `──────────────────────\n`;
 
@@ -519,7 +519,7 @@ function orderDirectWhatsApp(productId) {
     if (!prod) return;
 
     const formattedPrice = formatPrice(prod.priceFCFA);
-    let message = `Bonjour Maître Boubacar,\n\n`;
+    let message = `Bonjour Boubacar,\n\n`;
     message += `Je suis intéressé(e) par votre création artisanale :\n`;
     message += `*${prod.name}*\n`;
     message += `• Catégorie : ${prod.categoryName}\n`;
@@ -1108,7 +1108,7 @@ function handleAdminLogin(e) {
 
     // Codes PIN autorisés : 'aghar2026' ou numéro artisan '779640035'
     if (enteredPin === 'aghar2026' || enteredPin === '779640035' || enteredPin === '221779640035') {
-        showToast('Bienvenue Maître Boubacar !', 'success');
+        showToast('Bienvenue Boubacar Dicko !', 'success');
         showAdminDashboard();
     } else {
         showToast('Code PIN incorrect (par défaut : aghar2026)', 'warning');
