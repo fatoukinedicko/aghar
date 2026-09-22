@@ -104,12 +104,12 @@
             <!-- Liens de Navigation Éditoriaux (Desktop) -->
             <nav class="hidden xl:flex items-center gap-7 text-xs uppercase font-bold tracking-widest text-stone-700">
                 
-                <!-- Menu Déroulant Haute Collection -->
+                <!-- 1. Catégories & Créations (Menu Déroulant) -->
                 <div class="nav-dropdown-wrapper py-2">
-                    <button class="hover:text-[#8F3B23] transition-colors flex items-center gap-1.5 group cursor-pointer">
-                        <span>La Collection</span>
+                    <a href="#creations" class="hover:text-[#8F3B23] transition-colors flex items-center gap-1.5 group cursor-pointer" title="Voir les catégories et créations de l'atelier">
+                        <span>Catégories</span>
                         <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-[#C5A059] group-hover:rotate-180 transition-transform duration-200"></i>
-                    </button>
+                    </a>
                     
                     <div class="nav-dropdown-menu">
                         <div class="px-3 py-2 border-b border-stone-100 mb-1">
@@ -136,33 +136,45 @@
                                 <div class="text-[10px] text-stone-500 font-light">Vannerie de doum sauvage & cauris</div>
                             </div>
                         </a>
+                        <a href="#surmesure" class="nav-dropdown-item group">
+                            <div class="w-8 h-8 rounded-lg bg-amber-100 border border-amber-300/80 flex items-center justify-center text-sm shrink-0 group-hover:bg-[#8F3B23] group-hover:text-white transition-colors">✨</div>
+                            <div>
+                                <div class="text-xs font-bold text-[#8F3B23]">Sur-Mesure & Mariages</div>
+                                <div class="text-[10px] text-stone-500 font-light">Créations personnalisées sur commande</div>
+                            </div>
+                        </a>
                         <div class="mt-1 pt-2 border-t border-stone-100">
                             <a href="#creations" onclick="selectCategoryAndScroll('all')" class="flex items-center justify-between text-[11px] font-extrabold text-[#C5A059] hover:text-[#8F3B23] px-3 py-1.5 rounded-lg hover:bg-stone-50 transition-colors">
-                                <span>Voir les 17 Créations</span>
+                                <span>Voir Tout le Catalogue (17 Pièces)</span>
                                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <a href="#artisan" class="hover:text-[#8F3B23] transition-colors py-2 relative group">
-                    <span>L'Histoire & Inaden</span>
+                <!-- 2. Histoire de l'Atelier -->
+                <a href="#artisan" class="hover:text-[#8F3B23] transition-colors py-2 relative group" title="Découvrir l'histoire de Maître Boubacar Dicko et des Inaden">
+                    <span>Histoire de l'Atelier</span>
                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C5A059] group-hover:w-full transition-all duration-300"></span>
                 </a>
                 
-                <a href="#surmesure" class="hover:text-[#8F3B23] transition-colors py-2 relative group flex items-center gap-1.5">
+                <!-- 3. Sur-Mesure -->
+                <a href="#surmesure" class="hover:text-[#8F3B23] transition-colors py-2 relative group flex items-center gap-1.5" title="Commander un coffre ou meuble personnalisé">
                     <span>Sur-Mesure</span>
                     <span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-amber-100 text-[#8F3B23] border border-amber-300/60 uppercase">Mariage</span>
                 </a>
                 
-                <a href="#entretien" class="hover:text-[#8F3B23] transition-colors py-2 relative group">
+                <!-- 4. Art du Cuir (Guide Entretien) -->
+                <a href="#entretien" class="hover:text-[#8F3B23] transition-colors py-2 relative group" title="Conseils d'entretien du cuir et du bois">
                     <span>Art du Cuir</span>
                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C5A059] group-hover:w-full transition-all duration-300"></span>
                 </a>
                 
-                <a href="#contact" class="hover:text-[#8F3B23] transition-colors py-2 relative group">
-                    <span>L'Atelier N° 42</span>
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C5A059] group-hover:w-full transition-all duration-300"></span>
+                <!-- 5. Contact & Atelier -->
+                <a href="#contact" class="hover:text-[#8F3B23] transition-colors py-2 relative group flex items-center gap-1.5 text-[#8F3B23] font-black" title="Adresse, WhatsApp et horaires d'ouverture à Soumbédioune">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#C5A059]"></i>
+                    <span>Contact & Atelier</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#8F3B23] group-hover:w-full transition-all duration-300"></span>
                 </a>
             </nav>
 
@@ -230,53 +242,84 @@
                 <input type="text" id="mobileSearchInput" placeholder="Rechercher coffre, boîte, panier..." class="bg-transparent text-xs text-stone-800 placeholder-stone-400 focus:outline-none w-full">
             </div>
 
-            <!-- Accès Direct Métiers de l'Atelier -->
+            <!-- 1. Accès Direct aux Catégories de l'Atelier -->
             <div>
-                <div class="text-[10px] uppercase font-bold tracking-[0.2em] text-[#C5A059] mb-2.5">
-                    Spécialités de la Boutique :
+                <div class="text-[10px] uppercase font-extrabold tracking-[0.2em] text-[#C5A059] mb-2.5 flex items-center justify-between">
+                    <span>1. Catégories & Créations</span>
+                    <a href="#creations" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="text-[10px] text-[#8F3B23] lowercase font-semibold hover:underline">voir tout (17) →</a>
                 </div>
                 <div class="grid grid-cols-2 gap-2">
-                    <button onclick="selectCategoryAndScroll('coffres'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-left flex items-center gap-2 text-xs font-bold text-stone-800">
-                        <span>📦</span>
-                        <span>Coffres d'Ébène</span>
+                    <button onclick="selectCategoryAndScroll('coffres'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-3 bg-white hover:bg-amber-50/50 border border-stone-200 rounded-xl text-left flex items-center gap-2.5 text-xs font-bold text-stone-800 transition-colors shadow-xs">
+                        <span class="text-base">📦</span>
+                        <div>
+                            <div>Coffres & Malles</div>
+                            <div class="text-[9px] text-stone-400 font-normal">Acacia & laiton</div>
+                        </div>
                     </button>
-                    <button onclick="selectCategoryAndScroll('boites'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-left flex items-center gap-2 text-xs font-bold text-stone-800">
-                        <span>👝</span>
-                        <span>Boîtes en Cuir</span>
+                    <button onclick="selectCategoryAndScroll('boites'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-3 bg-white hover:bg-amber-50/50 border border-stone-200 rounded-xl text-left flex items-center gap-2.5 text-xs font-bold text-stone-800 transition-colors shadow-xs">
+                        <span class="text-base">👝</span>
+                        <div>
+                            <div>Boîtes en Cuir</div>
+                            <div class="text-[9px] text-stone-400 font-normal">Miroirs nomades</div>
+                        </div>
                     </button>
-                    <button onclick="selectCategoryAndScroll('paniers'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-white hover:bg-stone-50 border border-stone-200 rounded-xl text-left flex items-center gap-2 text-xs font-bold text-stone-800">
-                        <span>🧺</span>
-                        <span>Paniers Doum</span>
+                    <button onclick="selectCategoryAndScroll('paniers'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-3 bg-white hover:bg-amber-50/50 border border-stone-200 rounded-xl text-left flex items-center gap-2.5 text-xs font-bold text-stone-800 transition-colors shadow-xs">
+                        <span class="text-base">🧺</span>
+                        <div>
+                            <div>Paniers & Jarres</div>
+                            <div class="text-[9px] text-stone-400 font-normal">Doum & cauris</div>
+                        </div>
                     </button>
-                    <button onclick="selectCategoryAndScroll('surmesure'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-amber-50 hover:bg-amber-100/70 border border-amber-300/60 rounded-xl text-left flex items-center gap-2 text-xs font-bold text-[#8F3B23]">
-                        <span>✨</span>
-                        <span>Sur-Mesure</span>
+                    <button onclick="selectCategoryAndScroll('surmesure'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-3 bg-amber-50 hover:bg-amber-100/70 border border-amber-300/80 rounded-xl text-left flex items-center gap-2.5 text-xs font-bold text-[#8F3B23] transition-colors shadow-xs">
+                        <span class="text-base">✨</span>
+                        <div>
+                            <div>Sur-Mesure</div>
+                            <div class="text-[9px] text-[#8F3B23]/70 font-normal">Commandes mariage</div>
+                        </div>
                     </button>
                 </div>
             </div>
 
-            <!-- Liens de Navigation Mobile -->
-            <div class="space-y-2 text-xs uppercase font-bold tracking-widest border-t border-stone-200 pt-3">
-                <a href="#creations" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
-                    <span>La Collection (17 Pièces)</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
-                </a>
-                <a href="#artisan" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
-                    <span>L'Histoire & Savoir-Faire Inaden</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
-                </a>
-                <a href="#surmesure" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
-                    <span>Commandes Sur-Mesure & Mariages</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
-                </a>
-                <a href="#entretien" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
-                    <span>Art & Entretien du Cuir Saharien</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
-                </a>
-                <a href="#contact" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="block py-1.5 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between">
-                    <span>Visiter l'Atelier N° 42 à Dakar</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
-                </a>
+            <!-- 2. Histoire & Savoir-Faire de l'Atelier -->
+            <div class="border-t border-stone-200 pt-3">
+                <div class="text-[10px] uppercase font-extrabold tracking-[0.2em] text-[#C5A059] mb-2">
+                    2. Histoire & Savoir-Faire
+                </div>
+                <div class="space-y-1.5 text-xs font-bold">
+                    <a href="#artisan" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="p-2.5 bg-white rounded-xl border border-stone-200 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between shadow-xs">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-4 h-4 text-[#C5A059]"></i>
+                            <span>Histoire de l'Atelier & Tradition Inaden</span>
+                        </span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+                    </a>
+                    <a href="#entretien" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="p-2.5 bg-white rounded-xl border border-stone-200 text-stone-800 hover:text-[#8F3B23] flex items-center justify-between shadow-xs">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-[#C5A059]"></i>
+                            <span>Art du Cuir & Guide d'Entretien</span>
+                        </span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. Contact & Visite à Soumbédioune -->
+            <div class="border-t border-stone-200 pt-3">
+                <div class="text-[10px] uppercase font-extrabold tracking-[0.2em] text-[#C5A059] mb-2">
+                    3. Contact & Informations Atelier
+                </div>
+                <div class="space-y-2">
+                    <a href="#contact" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="p-3 bg-[#0B131F] text-white rounded-xl border border-[#C5A059]/40 flex items-center justify-between shadow-sm">
+                        <div class="flex items-center gap-2.5">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-amber-300"></i>
+                            <div>
+                                <div class="text-xs font-bold font-heading text-white">Atelier N° 42 • Soumbédioune</div>
+                                <div class="text-[10px] text-stone-300 font-light">Corniche Ouest, Dakar • 7j/7 de 9h à 19h30</div>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-amber-300"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Sélecteur Devise Mobile & Contact Rapide -->
@@ -649,15 +692,16 @@
 
     <!-- Récit Culturel : L'Atelier N° 42 & La Tradition des Inaden -->
     <section id="artisan" class="bg-[#0B131F] text-white py-24 px-4 sm:px-6 lg:px-8 border-y border-[#C5A059]/30 relative overflow-hidden">
+        <div id="histoire" class="absolute top-0 left-0"></div>
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             <div class="lg:col-span-6 space-y-6">
                 <span class="text-xs uppercase font-extrabold tracking-[0.25em] text-[#C5A059] bg-white/5 px-4 py-1.5 rounded-full border border-[#C5A059]/40">
-                    Transmission Ancestrale
+                    Transmission Ancestrale • Dakar & Sahara
                 </span>
                 
                 <h2 class="text-3xl sm:text-4xl font-extrabold font-heading tracking-tight leading-tight">
-                    Les Inaden : Maîtres Forgerons & Maroquiniers du Désert
+                    L'Histoire de l'Atelier & la Tradition des Inaden
                 </h2>
 
                 <p class="text-stone-300 text-sm leading-relaxed font-light">
@@ -856,8 +900,126 @@
         </div>
     </section>
 
+    <!-- Section Dédiée : Informations de Contact & Visite de l'Atelier N° 42 -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-white border-t border-stone-200 relative">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-[11px] uppercase font-extrabold tracking-[0.25em] text-[#8F3B23] bg-amber-100/80 px-4 py-1 rounded-full border border-amber-200">
+                    ACCUEIL & RENCONTRE À DAKAR
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-stone-900 mt-4 tracking-tight">
+                    Visiter l'Atelier N° 42 & Nous Contacter
+                </h2>
+                <div class="gold-divider">
+                    <span class="text-[#C5A059] font-heading text-lg">ⵣ</span>
+                </div>
+                <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+                    Maître Boubacar Dicko vous accueille chaleureusement tous les jours au Village Artisanal de Soumbédioune pour découvrir les créations en atelier, concevoir un meuble sur-mesure ou échanger sur l'art touareg.
+                </p>
+            </div>
+
+            <!-- Grille 3 Blocs Contact Clairs & Fluides -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                
+                <!-- Bloc 1 : Adresse & Visite physique -->
+                <div class="p-7 rounded-3xl bg-stone-50 border border-stone-200 shadow-sm flex flex-col justify-between hover:border-[#C5A059] transition-all group">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-[#0B131F] text-[#C5A059] flex items-center justify-center border border-[#C5A059]/40 shadow-md">
+                            <i data-lucide="map-pin" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase font-extrabold tracking-[0.2em] text-[#C5A059]">Localisation de l'Atelier</span>
+                            <h3 class="text-lg font-bold font-heading text-stone-900 mt-1">Village Artisanal de Soumbédioune</h3>
+                        </div>
+                        <p class="text-xs text-stone-600 leading-relaxed font-light">
+                            <strong>Atelier N° 42</strong> — Corniche Ouest, Dakar, Sénégal.<br>
+                            Face à la baie de Soumbédioune et à l'océan. Parking visiteurs surveillé à l'entrée du village.
+                        </p>
+                        <div class="p-3 bg-white rounded-xl border border-stone-200 text-[11px] text-stone-700">
+                            <span class="font-bold text-[#8F3B23]">Horaires d'accueil :</span><br>
+                            Ouvert 7j / 7, du lundi au dimanche<br>
+                            De 09h00 à 19h30 en continu
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="https://maps.google.com/?q=Village+Artisanal+de+Soumbedioune+Dakar" target="_blank" class="w-full py-3 px-4 rounded-xl btn-luxury-primary text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm active:scale-95">
+                            <i data-lucide="compass" class="w-4 h-4 text-amber-300"></i>
+                            <span>Ouvrir dans Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bloc 2 : WhatsApp & Téléphone Direct -->
+                <div class="p-7 rounded-3xl bg-[#0B131F] text-white border-2 border-[#C5A059]/60 shadow-xl flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-[#C5A059]/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="space-y-4 relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-950/80 text-emerald-400 flex items-center justify-center border border-emerald-500/40 shadow-md">
+                            <i data-lucide="message-circle" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase font-extrabold tracking-[0.2em] text-amber-300">Ligne Directe Artisan</span>
+                            <h3 class="text-lg font-bold font-heading text-white mt-1">Boubacar Dicko</h3>
+                        </div>
+                        <p class="text-xs text-stone-300 leading-relaxed font-light">
+                            Contactez directement l'artisan pour vos questions, réservations de pièces du catalogue ou devis sur-mesure.
+                        </p>
+                        <div class="p-3.5 bg-white/10 rounded-xl border border-white/15 text-center">
+                            <div class="text-[10px] uppercase font-bold text-amber-300 tracking-wider">Téléphone & WhatsApp</div>
+                            <div class="text-lg font-black text-white mt-0.5 tracking-wider font-heading">+221 77 964 00 35</div>
+                            <div class="text-[10px] text-emerald-400 mt-1 flex items-center justify-center gap-1.5 font-medium">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span>Atelier disponible en direct</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-6 space-y-2 relative z-10">
+                        <a href="https://wa.me/221779640035?text=Bonjour%20Ma%C3%AEtre%20Boubacar,%20je%20vous%20contacte%20depuis%20votre%20boutique%20AGHAR" target="_blank" class="w-full py-3 px-4 rounded-xl btn-whatsapp-luxe text-white text-xs font-bold flex items-center justify-center gap-2 shadow-lg active:scale-95">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Discuter sur WhatsApp (+221)</span>
+                        </a>
+                        <a href="tel:+221779640035" class="w-full py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold flex items-center justify-center gap-2 border border-white/20 transition-colors">
+                            <i data-lucide="phone-call" class="w-3.5 h-3.5 text-amber-300"></i>
+                            <span>Appeler : +221 77 964 00 35</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bloc 3 : Retrait & Expéditions Mondiales -->
+                <div class="p-7 rounded-3xl bg-stone-50 border border-stone-200 shadow-sm flex flex-col justify-between hover:border-[#C5A059] transition-all group">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-[#8F3B23] text-white flex items-center justify-center border border-[#8F3B23] shadow-md">
+                            <i data-lucide="package-check" class="w-7 h-7 text-amber-300"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase font-extrabold tracking-[0.2em] text-[#C5A059]">Livraison & Expéditions</span>
+                            <h3 class="text-lg font-bold font-heading text-stone-900 mt-1">Dakar & International</h3>
+                        </div>
+                        <p class="text-xs text-stone-600 leading-relaxed font-light">
+                            <strong>• Retrait gratuit :</strong> À l'Atelier N° 42 de Soumbédioune.<br>
+                            <strong>• Livraison Dakar :</strong> Coursier sécurisé (Almadies, Plateau, Ngor, Mermoz).<br>
+                            <strong>• Expédition Mondiale :</strong> Caisses bois capitonnées avec DHL Express (Europe, USA, Afrique).
+                        </p>
+                        <div class="p-3 bg-white rounded-xl border border-stone-200 text-[11px] text-stone-700">
+                            <span class="font-bold text-[#8F3B23]">Moyens de paiement acceptés :</span><br>
+                            Wave, Orange Money, Free Money, Virement bancaire ou espèces à l'atelier.
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a href="#surmesure" class="w-full py-3 px-4 rounded-xl bg-amber-50 hover:bg-amber-100 text-[#8F3B23] border border-amber-300/80 text-xs font-bold flex items-center justify-center gap-2 transition-colors">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>Demander un Devis Sur-Mesure</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
     <!-- Pied de Page de Prestige (Footer) -->
-    <footer id="contact" class="bg-[#0B131F] text-white py-20 px-4 sm:px-6 lg:px-8 border-t-2 border-[#C5A059]/40">
+    <footer id="footer" class="bg-[#0B131F] text-white py-20 px-4 sm:px-6 lg:px-8 border-t-2 border-[#C5A059]/40">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             <!-- Marque & Identité -->

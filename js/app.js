@@ -194,10 +194,10 @@ function renderProducts() {
 
 // Setup Event Listeners
 function setupEventListeners() {
-    // Category pills
-    document.querySelectorAll('.category-btn').forEach(btn => {
+    // Category pills (Catalog filters)
+    document.querySelectorAll('.category-pill, .category-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.category-pill, .category-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             state.category = btn.dataset.category;
             renderProducts();
@@ -864,10 +864,10 @@ function startHeroAutoPlay() {
     }, 7000);
 }
 
-// Category Shortcut Pill in Hero Banner
+// Category Shortcut Pill in Hero Banner & Menus
 function selectCategoryAndScroll(categoryKey) {
     state.category = categoryKey;
-    document.querySelectorAll('.category-btn').forEach(b => {
+    document.querySelectorAll('.category-pill, .category-btn').forEach(b => {
         b.classList.toggle('active', b.dataset.category === categoryKey);
     });
     renderProducts();

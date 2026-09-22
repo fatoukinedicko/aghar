@@ -34,6 +34,7 @@
 /* Base Styles */
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 105px;
     background-color: var(--color-sand-bg);
 }
 
