@@ -110,92 +110,84 @@ function renderProducts() {
         const inCart = state.cart.find(i => i.id === product.id);
 
         return `
-            <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-stone-200/80 transition-all duration-500 flex flex-col group hover:-translate-y-1.5" data-category="${product.category}">
+            <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-stone-200/90 transition-all duration-300 flex flex-col group" data-category="${product.category}">
                 
-                <!-- Product Image Box (4:5 Portrait Saharien) -->
-                <div class="relative aspect-[4/5] bg-stone-900 overflow-hidden cursor-pointer" onclick="openProductModal('${product.id}')">
+                <!-- Product Image Box (4:5 Portrait) -->
+                <div class="relative aspect-[4/5] bg-[#0F141C] overflow-hidden cursor-pointer" onclick="openProductModal('${product.id}')">
                     ${mediaMarkup}
                     
-                    <!-- Badges -->
-                    <div class="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between pointer-events-none">
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider ${
-                            product.category === 'coffres' ? 'bg-[#8F3B23] text-white' :
-                            product.category === 'boites' ? 'bg-[#0B131F] text-amber-300' :
-                            'bg-[#C5A059] text-stone-950'
-                        } shadow-md backdrop-blur-sm">
+                    <!-- Badge Uniforme Ébène & Or -->
+                    <div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                        <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#0F141C]/90 text-[#C5A059] border border-[#C5A059]/40 shadow-sm backdrop-blur-sm">
                             ${product.categoryName}
                         </span>
                         ${product.isFeatured ? `
-                            <span class="px-2.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest bg-stone-900/90 text-[#FFDF80] border border-[#C5A059]/60 shadow-md backdrop-blur-md">
-                                Sélection Atelier
+                            <span class="px-2.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider bg-[#C5A059] text-[#0F141C] shadow-sm">
+                                Sélection
                             </span>
                         ` : ''}
                     </div>
 
                     <!-- Quick View Overlay on Hover -->
-                    <div class="absolute inset-0 bg-stone-950/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 backdrop-blur-[2px]">
-                        <button onclick="event.stopPropagation(); openProductModal('${product.id}')" class="px-5 py-2.5 rounded-full bg-white text-stone-900 text-xs font-bold shadow-xl hover:bg-[#C5A059] hover:text-white transition-all flex items-center gap-2">
-                            <i data-lucide="eye" class="w-4 h-4 text-[#C5A059] group-hover:text-white"></i>
-                            <span>Consulter l'Œuvre</span>
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
+                        <button onclick="event.stopPropagation(); openProductModal('${product.id}')" class="px-4 py-2 rounded-full bg-white text-[#0F141C] text-xs font-bold shadow-lg hover:bg-[#C5A059] transition-all flex items-center gap-1.5">
+                            <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                            <span>Détails</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Product Content / Informations de Galerie -->
-                <div class="p-6 flex-1 flex flex-col justify-between bg-white">
+                <!-- Product Content Épuré -->
+                <div class="p-5 flex-1 flex flex-col justify-between bg-white">
                     <div>
-                        <div class="flex items-center justify-between text-xs mb-2">
-                            <span class="text-[10px] uppercase font-bold tracking-[0.16em] text-[#C5A059] flex items-center gap-1">
-                                <span>ⵣ</span> ${product.categoryName}
-                            </span>
-                            <span class="text-[10px] font-semibold text-stone-500 bg-stone-100 px-2 py-0.5 rounded-full">
-                                ${product.craftTime}
-                            </span>
+                        <div class="flex items-center justify-between text-[11px] text-stone-400 mb-1">
+                            <span>${product.dimensions}</span>
                         </div>
                         
-                        <h3 class="text-base sm:text-lg font-bold text-stone-900 font-heading line-clamp-2 leading-snug group-hover:text-[#8F3B23] transition-colors cursor-pointer" onclick="openProductModal('${product.id}')">
+                        <h3 class="text-base font-bold text-stone-900 font-heading line-clamp-1 leading-snug group-hover:text-[#9A7836] transition-colors cursor-pointer" onclick="openProductModal('${product.id}')">
                             ${product.name}
                         </h3>
                         
-                        <p class="text-stone-600 text-xs mt-2 line-clamp-2 leading-relaxed font-light">
-                            ${product.shortDesc}
-                        </p>
+                        <div class="mt-1.5">
+                            <p id="cardDesc-${product.id}" class="text-stone-500 text-xs line-clamp-1 leading-relaxed font-light">
+                                ${product.shortDesc}
+                            </p>
+                            <button type="button" onclick="toggleCardDesc('${product.id}', this)" class="text-[11px] font-bold text-[#9A7836] hover:text-stone-900 mt-1 inline-flex items-center gap-1 cursor-pointer">
+                                <span>Voir plus</span>
+                                <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="mt-5 pt-4 border-t border-stone-100 space-y-3">
+                    <div class="mt-4 pt-3.5 border-t border-stone-100 space-y-3">
                         <div class="flex items-center justify-between">
-                            <div>
-                                <div class="text-[9px] uppercase tracking-widest text-stone-400 font-bold">Prix Atelier Direct</div>
-                                <div class="text-base sm:text-lg font-black text-[#0B131F] font-heading">
-                                    ${formatPrice(product.priceFCFA)}
-                                </div>
+                            <div class="text-base sm:text-lg font-black text-[#0F141C] font-heading">
+                                ${formatPrice(product.priceFCFA)}
                             </div>
                             ${inCart ? `
-                                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full flex items-center gap-1">
-                                    <i data-lucide="check" class="w-3 h-3"></i> Au panier (${inCart.quantity})
+                                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                                    ✓ Panier (${inCart.quantity})
                                 </span>
-                            ` : `
-                                <span class="text-[10px] text-stone-400 font-medium bg-stone-100 px-2 py-0.5 rounded-full">Pièce d'art</span>
-                            `}
+                            ` : ''}
                         </div>
 
                         <!-- 2 Boutons Équilibrés : Panier Classique + WhatsApp Direct -->
                         <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('${product.id}')" class="btn-luxury-primary py-2.5 px-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 active:scale-95 shadow-sm" title="${inCart ? 'Augmenter la quantité au panier' : 'Ajouter au panier'}">
-                                <i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-amber-300 shrink-0"></i>
+                            <button onclick="addToCart('${product.id}')" class="btn-luxury-primary py-2.5 px-2 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 active:scale-95 shadow-sm">
+                                <i data-lucide="shopping-bag" class="w-3.5 h-3.5 text-[#C5A059] shrink-0"></i>
                                 <span class="truncate">${inCart ? `Ajouté (${inCart.quantity})` : 'Au Panier'}</span>
                             </button>
-                            <button onclick="orderDirectWhatsApp('${product.id}')" class="btn-whatsapp-luxe py-2.5 px-2 rounded-xl text-white text-xs font-bold flex items-center justify-center gap-1.5 active:scale-95 shadow-sm" title="Commander directement sur WhatsApp (+221 77 964 00 35)">
+                            <button onclick="orderDirectWhatsApp('${product.id}')" class="btn-whatsapp-luxe py-2.5 px-2 rounded-xl text-white text-xs font-bold flex items-center justify-center gap-1.5 active:scale-95 shadow-sm">
                                 <i data-lucide="message-circle" class="w-3.5 h-3.5 shrink-0"></i>
                                 <span class="truncate">WhatsApp</span>
                             </button>
                         </div>
 
                         ${inCart ? `
-                            <div class="flex items-center justify-center pt-0.5">
-                                <button onclick="removeFromCart('${product.id}')" class="text-[11px] text-red-600 hover:text-red-700 hover:underline flex items-center gap-1 font-semibold transition-colors">
+                            <div class="flex items-center justify-center">
+                                <button onclick="removeFromCart('${product.id}')" class="text-[11px] text-red-600 hover:underline flex items-center gap-1 font-medium">
                                     <i data-lucide="trash-2" class="w-3 h-3"></i>
-                                    <span>Retirer du panier</span>
+                                    <span>Retirer</span>
                                 </button>
                             </div>
                         ` : ''}
@@ -205,6 +197,36 @@ function renderProducts() {
         `;
     }).join('');
 
+    lucide.createIcons();
+}
+
+// Toggle "Voir plus / Voir moins" sur les cartes produits et sections
+function toggleCardDesc(productId, btnElement, isTwoLine = false) {
+    const descEl = document.getElementById(`cardDesc-${productId}`) || document.getElementById(`testi-text-${String(productId).replace('testi-', '')}`);
+    if (!descEl) return;
+    const clampClass = isTwoLine ? 'line-clamp-2' : 'line-clamp-1';
+    const isClamped = descEl.classList.contains(clampClass);
+    if (isClamped) {
+        descEl.classList.remove(clampClass);
+        btnElement.innerHTML = `<span>Voir moins</span> <i data-lucide="chevron-up" class="w-3 h-3"></i>`;
+    } else {
+        descEl.classList.add(clampClass);
+        btnElement.innerHTML = `<span>Voir plus</span> <i data-lucide="chevron-down" class="w-3 h-3"></i>`;
+    }
+    lucide.createIcons();
+}
+
+function toggleSectionMore(contentId, btnElement, moreLabel = 'Voir plus', lessLabel = 'Voir moins') {
+    const el = document.getElementById(contentId);
+    if (!el) return;
+    const isHidden = el.classList.contains('hidden');
+    if (isHidden) {
+        el.classList.remove('hidden');
+        btnElement.innerHTML = `<span>${lessLabel}</span> <i data-lucide="chevron-up" class="w-3.5 h-3.5"></i>`;
+    } else {
+        el.classList.add('hidden');
+        btnElement.innerHTML = `<span>${moreLabel}</span> <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>`;
+    }
     lucide.createIcons();
 }
 
@@ -659,17 +681,20 @@ function renderTestimonials() {
     const container = document.getElementById('testimonialsContainer');
     if (!container) return;
 
-    container.innerHTML = TESTIMONIALS.map(t => `
-        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+    container.innerHTML = TESTIMONIALS.map((t, idx) => `
+        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
             <div>
-                <div class="flex items-center gap-1 text-amber-400 mb-3">
-                    ${Array(t.rating).fill('<i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>').join('')}
+                <div class="flex items-center gap-1 text-[#C5A059] mb-2.5">
+                    ${Array(t.rating).fill('<i data-lucide="star" class="w-3.5 h-3.5 fill-[#C5A059]"></i>').join('')}
                 </div>
-                <p class="text-stone-700 text-sm italic leading-relaxed">
+                <p id="testi-text-${idx}" class="text-stone-700 text-xs sm:text-sm italic leading-relaxed line-clamp-2">
                     « ${t.text} »
                 </p>
+                <button type="button" onclick="toggleCardDesc('testi-${idx}', this, true)" class="text-[11px] font-bold text-[#9A7836] hover:text-[#0F141C] transition-colors mt-1 inline-flex items-center gap-1">
+                    <span>Voir plus ▾</span>
+                </button>
             </div>
-            <div class="mt-5 pt-4 border-t border-stone-100 flex items-center justify-between">
+            <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
                 <div>
                     <div class="text-xs font-bold text-stone-900">${t.author}</div>
                     <div class="text-[11px] text-stone-500">${t.city}</div>
@@ -685,20 +710,31 @@ function renderCareTips() {
     const container = document.getElementById('careTipsContainer');
     if (!container) return;
 
-    container.innerHTML = CARE_TIPS.map(tip => `
-        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
-            <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-[#B84A28] mb-4">
-                <i data-lucide="${tip.icon}" class="w-6 h-6"></i>
+    container.innerHTML = CARE_TIPS.map((tip, idx) => `
+        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-xl bg-[#0F141C] border border-[#C5A059]/40 flex items-center justify-center text-[#C5A059] shrink-0">
+                        <i data-lucide="${tip.icon}" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-stone-900 font-heading leading-snug">${tip.title}</h3>
+                </div>
+                <p class="text-xs text-stone-600 leading-relaxed flex items-start gap-2">
+                    <span class="text-[#C5A059] font-bold">•</span>
+                    <span>${tip.tips[0]}</span>
+                </p>
+                <div id="care-more-${idx}" class="hidden mt-2 space-y-1.5 pt-2 border-t border-stone-100">
+                    ${tip.tips.slice(1).map(t => `
+                        <p class="text-xs text-stone-600 leading-relaxed flex items-start gap-2">
+                            <span class="text-[#C5A059] font-bold">•</span>
+                            <span>${t}</span>
+                        </p>
+                    `).join('')}
+                </div>
             </div>
-            <h3 class="text-base font-bold text-stone-900 font-heading mb-3">${tip.title}</h3>
-            <ul class="space-y-2">
-                ${tip.tips.map(t => `
-                    <li class="text-xs text-stone-600 flex items-start gap-2">
-                        <span class="text-[#C5A059] font-bold mt-0.5">•</span>
-                        <span>${t}</span>
-                    </li>
-                `).join('')}
-            </ul>
+            <button type="button" onclick="toggleSectionMore('care-more-${idx}', this, 'Voir plus ▾', 'Voir moins ▴')" class="text-[11px] font-bold text-[#9A7836] hover:text-[#0F141C] transition-colors mt-3 inline-flex items-center gap-1 self-start">
+                <span>Voir plus ▾</span>
+            </button>
         </div>
     `).join('');
 }
@@ -1263,7 +1299,7 @@ function renderAdminProductsList() {
                             ${isCustom ? '<span class="px-2 py-0.5 rounded text-[9px] font-black bg-emerald-100 text-emerald-800 uppercase">Nouvel Ajout</span>' : ''}
                         </div>
                         <div class="text-[11px] text-stone-500 mt-0.5 flex items-center gap-2">
-                            <span class="text-[#8F3B23] font-semibold">${prod.categoryName}</span>
+                            <span class="text-[#9A7836] font-semibold">${prod.categoryName}</span>
                             <span>•</span>
                             <span class="font-bold text-stone-900">${formatPrice(prod.priceFCFA)}</span>
                         </div>
