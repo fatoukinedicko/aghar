@@ -127,18 +127,18 @@
         </div>
     </aside>
 
-    <!-- Barre de Menu Principale Épurée & Unifiée -->
+    <!-- Barre de Menu Principale Épurée, Unifiée & 100% Responsive -->
     <header class="sticky top-0 z-40 header-glass transition-all shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
             
             <!-- 1. Identité Visuelle (Gauche) -->
-            <a href="#" class="flex items-center gap-3 group shrink-0" title="Maison AGHAR — Accueil">
-                <div class="h-12 w-12 sm:h-13 sm:w-13 rounded-full bg-[#0F141C] border-2 border-[#C5A059] p-1.5 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0">
+            <a href="#" class="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0" title="Maison AGHAR — Accueil">
+                <div class="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-[#0F141C] border-2 border-[#C5A059] p-1 sm:p-1.5 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0">
                     <img src="LOGO1-03.png" alt="Emblème AGHAR" class="h-full w-full object-contain">
                 </div>
-                <div class="flex flex-col justify-center">
-                    <img src="AGHAR-03.png" alt="AGHAR" class="h-8 sm:h-10 w-auto object-contain object-left">
-                    <span class="text-[9px] uppercase font-bold tracking-[0.22em] text-[#9A7836] mt-0.5">
+                <div class="flex flex-col justify-center min-w-0">
+                    <img src="AGHAR-03.png" alt="AGHAR" class="h-7 sm:h-10 w-auto object-contain object-left">
+                    <span class="text-[8px] sm:text-[9px] uppercase font-bold tracking-[0.18em] sm:tracking-[0.22em] text-[#9A7836] mt-0.5 truncate">
                         Artisanat Touareg • Dakar
                     </span>
                 </div>
@@ -213,7 +213,7 @@
             </nav>
 
             <!-- 3. Actions (Droite) : Recherche, Devise, Panier, WhatsApp -->
-            <div class="flex items-center gap-2 shrink-0">
+            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
                 
                 <!-- Recherche Rapide (Grands écrans xl+) -->
                 <div class="header-search-wrap hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full w-40 focus-within:w-48 transition-all">
@@ -222,8 +222,8 @@
                 </div>
 
                 <!-- Sélecteur de Devise Épuré -->
-                <div class="flex items-center bg-white border border-stone-200 text-stone-900 rounded-xl px-2.5 py-2 shadow-2xs">
-                    <select id="currencySelector" aria-label="Choisir la devise" class="bg-transparent text-[11px] font-extrabold cursor-pointer focus:outline-none text-stone-800">
+                <div class="flex items-center bg-white border border-stone-200 text-stone-900 rounded-xl px-2 sm:px-2.5 py-1.5 sm:py-2 shadow-2xs">
+                    <select id="currencySelector" aria-label="Choisir la devise" class="bg-transparent text-[10px] sm:text-[11px] font-extrabold cursor-pointer focus:outline-none text-stone-800">
                         <option value="FCFA" selected>FCFA</option>
                         <option value="EUR">€ EUR</option>
                         <option value="USD">$ USD</option>
@@ -231,10 +231,10 @@
                 </div>
 
                 <!-- Bouton Panier Unifié (Noir Ébène & Or) -->
-                <button id="cartToggleBtn" class="relative px-3.5 py-2 rounded-xl bg-[#0F141C] hover:bg-stone-800 text-white border border-[#C5A059]/50 transition-all active:scale-95 shadow-sm flex items-center gap-2" title="Ouvrir le panier">
+                <button id="cartToggleBtn" class="relative px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-[#0F141C] hover:bg-stone-800 text-white border border-[#C5A059]/50 transition-all active:scale-95 shadow-sm flex items-center gap-1.5 sm:gap-2" title="Ouvrir le panier">
                     <i data-lucide="shopping-bag" class="w-4 h-4 text-[#C5A059]"></i>
                     <span class="hidden sm:inline text-[11px] font-bold tracking-wider uppercase">Panier</span>
-                    <span class="cart-badge bg-[#C5A059] text-[#0F141C] text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                    <span class="cart-badge bg-[#C5A059] text-[#0F141C] text-[10px] font-black w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center">0</span>
                 </button>
 
                 <!-- Bouton WhatsApp Direct -->
@@ -250,8 +250,8 @@
             </div>
         </div>
 
-        <!-- Menu Mobile Épuré & Unifié -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-[#FAF8F5] border-b-2 border-[#C5A059]/40 px-4 py-5 space-y-4 shadow-xl">
+        <!-- Menu Mobile Épuré, Scrollable & Unifié -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-[#FAF8F5] border-b-2 border-[#C5A059]/40 px-4 py-4 space-y-3.5 shadow-xl max-h-[calc(100vh-4rem)] overflow-y-auto">
             
             <!-- Recherche Mobile -->
             <div class="header-search-wrap flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white">
@@ -263,19 +263,19 @@
             <div class="grid grid-cols-2 gap-2">
                 <a href="#creations" onclick="selectCategoryAndScroll('all'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-[#0F141C] text-[#C5A059] rounded-xl border border-[#C5A059]/40 flex items-center gap-2 text-xs font-bold">
                     <span>ⵣ</span>
-                    <span>Tout voir (17)</span>
+                    <span class="truncate">Tout voir (17)</span>
                 </a>
                 <a href="#creations" onclick="selectCategoryAndScroll('coffres'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-white rounded-xl border border-stone-200 flex items-center gap-2 text-xs font-bold text-stone-800">
                     <span>📦</span>
-                    <span>Coffres & Malles</span>
+                    <span class="truncate">Coffres & Malles</span>
                 </a>
                 <a href="#creations" onclick="selectCategoryAndScroll('boites'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-white rounded-xl border border-stone-200 flex items-center gap-2 text-xs font-bold text-stone-800">
                     <span>👝</span>
-                    <span>Boîtes en Cuir</span>
+                    <span class="truncate">Boîtes en Cuir</span>
                 </a>
                 <a href="#creations" onclick="selectCategoryAndScroll('paniers'); document.getElementById('mobileMenu').classList.add('hidden');" class="p-2.5 bg-white rounded-xl border border-stone-200 flex items-center gap-2 text-xs font-bold text-stone-800">
                     <span>🧺</span>
-                    <span>Paniers & Jarres</span>
+                    <span class="truncate">Paniers & Jarres</span>
                 </a>
             </div>
 
@@ -293,8 +293,12 @@
                     <span>Entretien</span>
                     <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#C5A059]"></i>
                 </a>
-                <a href="#contact" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="p-2.5 bg-white rounded-xl border border-stone-200 flex items-center justify-between">
-                    <span>Contact & Accès</span>
+                <a href="#avis" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="p-2.5 bg-white rounded-xl border border-stone-200 flex items-center justify-between">
+                    <span>Avis Clients</span>
+                    <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#C5A059]"></i>
+                </a>
+                <a href="#contact" onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="col-span-2 p-2.5 bg-white rounded-xl border border-stone-200 flex items-center justify-between">
+                    <span>Contact & Accès Soumbédioune</span>
                     <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-[#C5A059]"></i>
                 </a>
             </div>
@@ -314,49 +318,45 @@
         </div>
     </header>
 
-    <!-- Hero Section Haute Joaillerie & Artisanat d'Art Saharien -->
-    <section class="relative hero-luxury-bg text-white overflow-hidden py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 border-b-2 border-[#C5A059]/40">
+    <!-- Hero Section Haute Joaillerie & Artisanat d'Art Saharien (Optimisé Mobile & Desktop) -->
+    <section class="relative hero-luxury-bg text-white overflow-hidden py-8 sm:py-14 lg:py-20 px-4 sm:px-6 lg:px-8 border-b-2 border-[#C5A059]/40">
         
         <!-- Éléments Lumineux & Textures du Sahara -->
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-0 right-1/4 w-[30rem] h-[30rem] bg-[#9A7836]/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
                 <!-- Colonne Gauche : Narration de Prestige & Accès aux 3 Métiers -->
-                <div class="lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
+                <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
                     
                     <!-- Sceau d'Authenticité Touareg & Référencement Dakar -->
-                    <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2.5 px-4 py-2 rounded-full bg-stone-900/80 border border-[#C5A059]/60 shadow-xl backdrop-blur-md">
-                        <div class="w-6 h-6 rounded-full bg-white/10 p-0.5 border border-[#C5A059] flex items-center justify-center shrink-0">
+                    <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 px-3.5 py-1.5 rounded-full bg-stone-900/80 border border-[#C5A059]/60 shadow-xl backdrop-blur-md max-w-full">
+                        <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 p-0.5 border border-[#C5A059] flex items-center justify-center shrink-0">
                             <img src="LOGO1-03.png" alt="Emblème AGHAR" class="w-full h-full object-contain">
                         </div>
-                        <span class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#FFDF80]">
-                            Atelier d'Art N° 18B • Village Artisanal de Soumbédioune, Dakar
-                        </span>
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 hidden sm:inline-block"></span>
-                        <span class="text-[11px] text-stone-300 font-light hidden sm:inline-block">
-                            Artisanat Sénégalais d'Exception
+                        <span class="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.14em] sm:tracking-[0.2em] text-[#FFDF80]">
+                            Atelier d'Art N° 18B • Soumbédioune, Dakar
                         </span>
                     </div>
                     
                     <!-- Titre Magistral & Optimisé Recherche Google (SEO) -->
-                    <div class="space-y-2.5">
-                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight leading-[1.14]">
+                    <div class="space-y-2">
+                        <h1 class="text-2xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight leading-[1.16]">
                             Coffres Touaregs & Artisanat d'Art
-                            <span class="block text-2xl sm:text-4xl lg:text-5xl text-gold-luxe mt-1">
+                            <span class="block text-xl sm:text-4xl lg:text-5xl text-gold-luxe mt-1">
                                 à Dakar • Soumbédioune
                             </span>
                         </h1>
-                        <p class="text-[#E8D39E] font-heading text-xs sm:text-sm font-bold tracking-widest uppercase">
+                        <p class="text-[#E8D39E] font-heading text-[11px] sm:text-sm font-bold tracking-widest uppercase">
                             Maroquinerie Ciselée • Ébénisterie Nomade • Vannerie Saharienne
                         </p>
                     </div>
                     
                     <!-- Histoire & Philosophie de l'Artisan (Essentiel + Voir plus) -->
                     <div class="max-w-2xl mx-auto lg:mx-0">
-                        <p class="text-stone-300 text-sm sm:text-base leading-relaxed font-light">
+                        <p class="text-stone-300 text-xs sm:text-base leading-relaxed font-light">
                             Au <strong class="text-white font-medium">Village Artisanal de Soumbédioune (Atelier N° 18B)</strong>, <strong class="text-[#C5A059] font-medium">Boubacar Dicko</strong> façonne à la main des coffres en bois et cuir, coffrets ciselés et paniers touaregs uniques.
                         </p>
                         <div id="heroMoreText" class="hidden mt-2 text-stone-400 text-xs sm:text-sm leading-relaxed font-light">
@@ -367,53 +367,53 @@
                         </button>
                     </div>
 
-                    <!-- Raccourcis Rapides vers les Spécialités (Couleurs Uniformisées) -->
+                    <!-- Raccourcis Rapides vers les Spécialités (Couleurs Uniformisées & Grille Mobile 2x2) -->
                     <div class="pt-1">
-                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2">
-                            <button onclick="selectCategoryAndScroll('coffres')" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-[#C5A059]/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-[#C5A059] transition-all flex items-center gap-2">
+                        <div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center lg:justify-start gap-2">
+                            <button onclick="selectCategoryAndScroll('coffres')" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-[#C5A059]/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-[#C5A059] transition-all flex items-center justify-center sm:justify-start gap-1.5">
                                 <span>📦</span>
-                                <span>Coffres & Malles</span>
+                                <span class="truncate">Coffres & Malles</span>
                             </button>
-                            <button onclick="selectCategoryAndScroll('boites')" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-[#C5A059]/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-[#C5A059] transition-all flex items-center gap-2">
+                            <button onclick="selectCategoryAndScroll('boites')" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-[#C5A059]/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-[#C5A059] transition-all flex items-center justify-center sm:justify-start gap-1.5">
                                 <span>👝</span>
-                                <span>Boîtes en Cuir</span>
+                                <span class="truncate">Boîtes en Cuir</span>
                             </button>
-                            <button onclick="selectCategoryAndScroll('paniers')" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-[#C5A059]/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-[#C5A059] transition-all flex items-center gap-2">
+                            <button onclick="selectCategoryAndScroll('paniers')" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-[#C5A059]/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-[#C5A059] transition-all flex items-center justify-center sm:justify-start gap-1.5">
                                 <span>🧺</span>
-                                <span>Paniers & Jarres</span>
+                                <span class="truncate">Paniers & Jarres</span>
                             </button>
-                            <button onclick="selectCategoryAndScroll('surmesure')" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-[#C5A059]/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-[#C5A059] transition-all flex items-center gap-2">
+                            <button onclick="selectCategoryAndScroll('surmesure')" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-[#C5A059]/20 border border-[#C5A059]/40 text-xs font-semibold text-stone-200 hover:text-[#C5A059] transition-all flex items-center justify-center sm:justify-start gap-1.5">
                                 <span>✨</span>
-                                <span>Sur-Mesure</span>
+                                <span class="truncate">Sur-Mesure</span>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Boutons Principaux -->
-                    <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
-                        <a href="#creations" class="btn-luxury-gold px-7 py-3.5 rounded-xl shadow-xl flex items-center gap-2.5 text-xs uppercase tracking-widest font-extrabold group">
-                            <i data-lucide="sparkles" class="w-4 h-4 text-stone-950"></i>
+                    <!-- Boutons Principaux (Pleine largeur sur Mobile, côte à côte sur Tablette/Desktop) -->
+                    <div class="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
+                        <a href="#creations" class="btn-luxury-gold px-6 py-3.5 rounded-xl shadow-xl flex items-center justify-center gap-2.5 text-xs uppercase tracking-widest font-extrabold group">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-stone-950 shrink-0"></i>
                             <span>Voir la Collection (17)</span>
                         </a>
-                        <a href="https://wa.me/221779640035?text=Bonjour%20Boubacar,%20je%20d%C3%A9couvre%20la%20boutique%20AGHAR%20et%20souhaite%20des%20renseignements" target="_blank" class="btn-whatsapp-luxe px-6 py-3.5 rounded-xl shadow-xl flex items-center gap-2 text-xs uppercase tracking-wider font-bold">
-                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <a href="https://wa.me/221779640035?text=Bonjour%20Boubacar,%20je%20d%C3%A9couvre%20la%20boutique%20AGHAR%20et%20souhaite%20des%20renseignements" target="_blank" class="btn-whatsapp-luxe px-6 py-3.5 rounded-xl shadow-xl flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-bold">
+                            <i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>
                             <span>WhatsApp Direct</span>
                         </a>
                     </div>
 
-                    <!-- Garanties d'Authenticité (Compact & Uniforme) -->
-                    <div class="pt-4 grid grid-cols-3 gap-2.5 border-t border-stone-800/80 max-w-lg mx-auto lg:mx-0 text-left">
-                        <div class="bg-white/5 px-3 py-2.5 rounded-xl border border-stone-800 flex items-center gap-2">
-                            <i data-lucide="hammer" class="w-4 h-4 shrink-0 text-[#C5A059]"></i>
-                            <span class="text-xs font-bold text-stone-200">100% Fait Main</span>
+                    <!-- Garanties d'Authenticité (Flex-wrap fluide sur tous les écrans) -->
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-2 border-t border-stone-800/80">
+                        <div class="bg-white/5 px-3 py-2 rounded-xl border border-stone-800 flex items-center gap-1.5">
+                            <i data-lucide="hammer" class="w-3.5 h-3.5 shrink-0 text-[#C5A059]"></i>
+                            <span class="text-[11px] font-bold text-stone-200">100% Fait Main</span>
                         </div>
-                        <div class="bg-white/5 px-3 py-2.5 rounded-xl border border-stone-800 flex items-center gap-2">
-                            <i data-lucide="leaf" class="w-4 h-4 shrink-0 text-[#C5A059]"></i>
-                            <span class="text-xs font-bold text-stone-200">Cuir Naturel</span>
+                        <div class="bg-white/5 px-3 py-2 rounded-xl border border-stone-800 flex items-center gap-1.5">
+                            <i data-lucide="leaf" class="w-3.5 h-3.5 shrink-0 text-[#C5A059]"></i>
+                            <span class="text-[11px] font-bold text-stone-200">Cuir Naturel</span>
                         </div>
-                        <div class="bg-white/5 px-3 py-2.5 rounded-xl border border-stone-800 flex items-center gap-2">
-                            <i data-lucide="map-pin" class="w-4 h-4 shrink-0 text-[#C5A059]"></i>
-                            <span class="text-xs font-bold text-stone-200">Atelier N° 18B</span>
+                        <div class="bg-white/5 px-3 py-2 rounded-xl border border-stone-800 flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0 text-[#C5A059]"></i>
+                            <span class="text-[11px] font-bold text-stone-200">Atelier N° 18B</span>
                         </div>
                     </div>
 
@@ -1077,8 +1077,8 @@
         </div>
     </footer>
 
-    <!-- Bouton WhatsApp Flottant Raffiné -->
-    <a href="https://wa.me/221779640035?text=Bonjour%20Boubacar,%20je%20vous%20contacte%20depuis%20votre%20site%20AGHAR%20Soumb%C3%A9dioune" target="_blank" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-700 hover:bg-emerald-600 text-white px-4 py-3.5 rounded-full shadow-2xl transition-all whatsapp-pulse-gold group" title="Échanger en direct avec l'artisan sur WhatsApp">
+    <!-- Bouton WhatsApp Flottant Raffiné (Optimisé Mobile & Desktop) -->
+    <a href="https://wa.me/221779640035?text=Bonjour%20Boubacar,%20je%20vous%20contacte%20depuis%20votre%20site%20AGHAR%20Soumb%C3%A9dioune" target="_blank" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2.5 bg-emerald-700 hover:bg-emerald-600 text-white p-3.5 sm:px-4 sm:py-3.5 rounded-full shadow-2xl transition-all whatsapp-pulse-gold group" title="Échanger en direct avec l'artisan sur WhatsApp">
         <i data-lucide="message-circle" class="w-6 h-6"></i>
         <span class="hidden md:inline text-xs font-bold tracking-wider uppercase">WhatsApp Artisan</span>
     </a>
@@ -1088,16 +1088,16 @@
     <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full sm:w-[460px] bg-white z-50 shadow-2xl flex flex-col justify-between translate-x-full border-l border-stone-200">
         
         <!-- En-tête Panier -->
-        <div class="p-6 border-b border-stone-200 flex items-center justify-between bg-stone-50">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-white border border-[#C5A059]/50 p-1 shadow-sm flex items-center justify-center overflow-hidden shrink-0">
+        <div class="p-4 sm:p-6 border-b border-stone-200 flex items-center justify-between bg-stone-50">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border border-[#C5A059]/50 p-1 shadow-sm flex items-center justify-center overflow-hidden shrink-0">
                     <img src="LOGO1-03.png" alt="Emblème AGHAR" class="w-full h-full object-contain">
                 </div>
                 <div class="flex flex-col">
-                    <img src="AGHAR-03.png" alt="AGHAR" class="h-5 w-auto object-contain object-left">
-                    <span class="text-[10px] font-bold text-stone-500 uppercase tracking-widest mt-0.5">Panier Artisanal</span>
+                    <img src="AGHAR-03.png" alt="AGHAR" class="h-4 sm:h-5 w-auto object-contain object-left">
+                    <span class="text-[9px] sm:text-[10px] font-bold text-stone-500 uppercase tracking-widest mt-0.5">Panier Artisanal</span>
                 </div>
-                <span class="cart-badge bg-[#9A7836] text-white text-xs font-bold px-2.5 py-0.5 rounded-full ml-1">0</span>
+                <span class="cart-badge bg-[#9A7836] text-white text-xs font-bold px-2 py-0.5 rounded-full ml-1">0</span>
             </div>
             <div class="flex items-center gap-2">
                 <button id="clearCartBtn" onclick="clearCart()" class="hidden px-2.5 py-1 text-[11px] font-bold text-red-600 hover:bg-red-50 rounded-lg border border-red-200 transition-colors items-center gap-1" title="Vider tout le panier">
@@ -1111,12 +1111,12 @@
         </div>
 
         <!-- Liste des Articles du Panier -->
-        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-3.5">
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-3.5">
             <!-- Populated via js/app.js -->
         </div>
 
         <!-- Notice Panier Vide -->
-        <div id="cartEmptyNotice" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
+        <div id="cartEmptyNotice" class="hidden flex-1 flex flex-col items-center justify-center p-6 sm:p-8 text-center">
             <div class="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center text-stone-400 mb-4">
                 <i data-lucide="shopping-bag" class="w-8 h-8"></i>
             </div>
@@ -1128,7 +1128,7 @@
         </div>
 
         <!-- Pied du Panier (Calcul & Commande WhatsApp Directe) -->
-        <div class="p-6 border-t border-stone-200 bg-stone-50 space-y-4">
+        <div class="p-4 sm:p-6 border-t border-stone-200 bg-stone-50 space-y-3.5">
             <div class="space-y-1.5 text-xs text-stone-600">
                 <div class="flex items-center justify-between">
                     <span>Sous-total articles :</span>
@@ -1140,14 +1140,14 @@
                 </div>
                 <div class="flex items-center justify-between text-base font-extrabold text-stone-900 pt-3 border-t border-stone-200">
                     <span>Total Estimé :</span>
-                    <span id="cartTotal" class="text-xl text-[#9A7836] font-black">0 FCFA</span>
+                    <span id="cartTotal" class="text-lg sm:text-xl text-[#9A7836] font-black">0 FCFA</span>
                 </div>
             </div>
 
             <!-- Bouton Commande WhatsApp Immédiate -->
-            <button id="cartCheckoutWhatsAppBtn" onclick="checkoutViaWhatsApp()" class="btn-whatsapp-luxe w-full py-4 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2.5 shadow-xl">
-                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                <span>Commander via WhatsApp (+221 77 964 00 35)</span>
+            <button id="cartCheckoutWhatsAppBtn" onclick="checkoutViaWhatsApp()" class="btn-whatsapp-luxe w-full py-3.5 sm:py-4 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl">
+                <i data-lucide="message-circle" class="w-4 h-4 shrink-0"></i>
+                <span>Commander via WhatsApp</span>
             </button>
 
             <p class="text-[10px] text-center text-stone-400 leading-relaxed font-light">
@@ -1157,24 +1157,24 @@
     </div>
 
     <!-- Modale Galerie / Fiche d'Authenticité de la Pièce -->
-    <div id="productDetailModal" class="fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-4 overflow-y-auto">
-        <div class="modal-luxury-content bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl border border-stone-200 relative my-8">
+    <div id="productDetailModal" class="fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-2 sm:p-4 overflow-y-auto">
+        <div class="modal-luxury-content bg-white w-full max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-stone-200 relative my-2 sm:my-8">
             
             <!-- Bouton Fermer -->
-            <button onclick="closeProductModal()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-stone-950/75 hover:bg-stone-950 text-white flex items-center justify-center transition-colors shadow-lg">
+            <button onclick="closeProductModal()" class="sticky sm:absolute top-3 right-3 ml-auto mr-3 mt-3 sm:m-0 z-30 w-10 h-10 rounded-full bg-stone-950/85 hover:bg-stone-950 text-white flex items-center justify-center transition-colors shadow-lg">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
 
-            <div class="grid grid-cols-1 md:grid-cols-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 -mt-10 sm:mt-0">
                 <!-- Visuel Agrandie Format Portrait 4/5 -->
                 <div id="modalProductImage" class="w-full aspect-[4/5] md:aspect-auto md:h-full bg-[#EDE5D8] flex items-center justify-center overflow-hidden">
                     <!-- Populated dynamically with real photo -->
                 </div>
 
                 <!-- Détails d'Authenticité de la Création -->
-                <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                <div class="p-5 sm:p-8 flex flex-col justify-between space-y-5">
                     <div>
-                        <div class="flex items-center gap-2.5 mb-2.5">
+                        <div class="flex flex-wrap items-center gap-2 mb-2">
                             <span id="modalProductBadge" class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#C5A059] text-stone-950">
                                 Pièce de Maître
                             </span>
@@ -1183,38 +1183,38 @@
                             </span>
                         </div>
 
-                        <h3 id="modalProductTitle" class="text-xl sm:text-2xl font-bold font-heading text-stone-900 leading-snug">
+                        <h3 id="modalProductTitle" class="text-lg sm:text-2xl font-bold font-heading text-stone-900 leading-snug">
                             Titre de la création
                         </h3>
 
-                        <div id="modalProductPrice" class="text-2xl font-black text-[#0B131F] mt-2.5">
+                        <div id="modalProductPrice" class="text-xl sm:text-2xl font-black text-[#0B131F] mt-2">
                             0 FCFA
                         </div>
 
-                        <p id="modalProductDesc" class="text-stone-600 text-xs sm:text-sm mt-3.5 leading-relaxed font-light">
+                        <p id="modalProductDesc" class="text-stone-600 text-xs sm:text-sm mt-3 leading-relaxed font-light">
                             Description détaillée de l'objet d'art touareg.
                         </p>
 
                         <!-- Table des Spécifications Techniques -->
-                        <div class="mt-6 space-y-2 border-t border-stone-100 pt-4 text-xs font-light">
-                            <div class="flex justify-between py-1.5 border-b border-stone-100">
-                                <span class="text-stone-400">Dimensions :</span>
+                        <div class="mt-5 space-y-2 border-t border-stone-100 pt-3.5 text-xs font-light">
+                            <div class="flex justify-between gap-2 py-1.5 border-b border-stone-100">
+                                <span class="text-stone-400 shrink-0">Dimensions :</span>
                                 <span id="modalProductDimensions" class="font-semibold text-stone-800 text-right">-</span>
                             </div>
-                            <div class="flex justify-between py-1.5 border-b border-stone-100">
-                                <span class="text-stone-400">Matières premières :</span>
+                            <div class="flex justify-between gap-2 py-1.5 border-b border-stone-100">
+                                <span class="text-stone-400 shrink-0">Matières premières :</span>
                                 <span id="modalProductMaterials" class="font-semibold text-stone-800 text-right">-</span>
                             </div>
-                            <div class="flex justify-between py-1.5 border-b border-stone-100">
-                                <span class="text-stone-400">Temps de façonnage :</span>
+                            <div class="flex justify-between gap-2 py-1.5 border-b border-stone-100">
+                                <span class="text-stone-400 shrink-0">Temps de façonnage :</span>
                                 <span id="modalProductCraftTime" class="font-semibold text-stone-800 text-right">-</span>
                             </div>
-                            <div class="flex justify-between py-1.5 border-b border-stone-100">
-                                <span class="text-stone-400">Poids approximatif :</span>
+                            <div class="flex justify-between gap-2 py-1.5 border-b border-stone-100">
+                                <span class="text-stone-400 shrink-0">Poids approximatif :</span>
                                 <span id="modalProductWeight" class="font-semibold text-stone-800 text-right">-</span>
                             </div>
-                            <div class="flex justify-between py-1.5">
-                                <span class="text-stone-400">Disponibilité :</span>
+                            <div class="flex justify-between gap-2 py-1.5">
+                                <span class="text-stone-400 shrink-0">Disponibilité :</span>
                                 <span id="modalProductStock" class="font-bold text-emerald-700 text-right">En stock à Soumbédioune</span>
                             </div>
                         </div>
@@ -1248,10 +1248,10 @@
                         <div>
                             <button id="modalWhatsAppBtn" class="btn-whatsapp-luxe w-full py-3.5 rounded-xl text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 shadow-md transition-all active:scale-95">
                                 <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                <span>Commander directement sur WhatsApp</span>
+                                <span>Commander sur WhatsApp</span>
                             </button>
                             <p class="text-[10px] text-stone-400 text-center mt-1 font-light">
-                                Échange direct avec Boubacar Dicko (+221 77 964 00 35) pour confirmation immédiate.
+                                Échange direct avec Boubacar Dicko (+221 77 964 00 35).
                             </p>
                         </div>
                     </div>
@@ -1263,30 +1263,30 @@
     </div>
 
     <!-- Modale Espace Propriétaire & Gestionnaire de Catalogue -->
-    <div id="adminModal" class="fixed inset-0 z-50 bg-stone-950/85 backdrop-blur-md hidden items-center justify-center p-3 sm:p-4 overflow-y-auto">
-        <div class="bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl border border-stone-300 relative my-6 max-h-[92vh] flex flex-col">
+    <div id="adminModal" class="fixed inset-0 z-50 bg-stone-950/85 backdrop-blur-md hidden items-center justify-center p-2 sm:p-4 overflow-y-auto">
+        <div class="bg-white w-full max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-stone-300 relative my-3 sm:my-6 max-h-[94vh] flex flex-col">
             
             <!-- En-tête Modale Admin -->
-            <div class="p-5 sm:p-6 bg-[#0B131F] text-white flex items-center justify-between border-b border-[#C5A059]/40 shrink-0">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-white/10 border border-[#C5A059] p-1 flex items-center justify-center shrink-0">
+            <div class="p-4 sm:p-6 bg-[#0B131F] text-white flex items-center justify-between border-b border-[#C5A059]/40 shrink-0">
+                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-[#C5A059] p-1 flex items-center justify-center shrink-0">
                         <img src="LOGO1-03.png" alt="Emblème" class="w-full h-full object-contain">
                     </div>
-                    <div>
-                        <div class="flex items-center gap-2">
-                            <h3 class="text-base font-extrabold font-heading text-white">Espace Artisan & Gestionnaire</h3>
+                    <div class="min-w-0">
+                        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                            <h3 class="text-sm sm:text-base font-extrabold font-heading text-white truncate">Espace Artisan</h3>
                             <span class="px-2 py-0.5 rounded text-[9px] font-black bg-[#C5A059] text-[#0B131F] uppercase">Boubacar Dicko</span>
                         </div>
-                        <p class="text-xs text-stone-300 font-light mt-0.5">Atelier d'Art N° 18B • Village Artisanal de Soumbédioune</p>
+                        <p class="text-[11px] sm:text-xs text-stone-300 font-light mt-0.5 truncate">Atelier d'Art N° 18B • Soumbédioune</p>
                     </div>
                 </div>
-                <button onclick="closeAdminModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer">
+                <button onclick="closeAdminModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer shrink-0">
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
             </div>
 
             <!-- ÉCRAN 1 : Déverrouillage par Code PIN -->
-            <div id="adminPinSection" class="p-8 sm:p-12 text-center space-y-6 my-auto">
+            <div id="adminPinSection" class="p-6 sm:p-12 text-center space-y-6 my-auto">
                 <div class="w-16 h-16 rounded-full bg-amber-50 border-2 border-[#C5A059] flex items-center justify-center text-[#9A7836] mx-auto shadow-md">
                     <i data-lucide="shield-lock" class="w-8 h-8"></i>
                 </div>
@@ -1311,23 +1311,23 @@
             <!-- ÉCRAN 2 : Tableau de Bord d'Administration -->
             <div id="adminDashboardSection" class="hidden flex-1 overflow-y-auto flex flex-col">
                 
-                <!-- Barre d'Onglets -->
-                <div class="flex items-center justify-between border-b border-stone-200 px-6 pt-3 bg-stone-50 shrink-0">
-                    <div class="flex items-center gap-6 text-xs uppercase font-bold tracking-wider">
-                        <button onclick="switchAdminTab('add')" data-tab="add" class="admin-tab-btn active pb-3 flex items-center gap-2 cursor-pointer">
-                            <i data-lucide="plus-circle" class="w-4 h-4 text-[#9A7836]"></i>
+                <!-- Barre d'Onglets Scrollable Mobile -->
+                <div class="flex items-center justify-between border-b border-stone-200 px-4 sm:px-6 pt-3 bg-stone-50 shrink-0 overflow-x-auto scrollbar-none gap-4">
+                    <div class="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs uppercase font-bold tracking-wider whitespace-nowrap">
+                        <button onclick="switchAdminTab('add')" data-tab="add" class="admin-tab-btn active pb-3 flex items-center gap-1.5 cursor-pointer">
+                            <i data-lucide="plus-circle" class="w-4 h-4 text-[#9A7836] shrink-0"></i>
                             <span>Ajouter un Produit</span>
                         </button>
-                        <button onclick="switchAdminTab('manage')" data-tab="manage" class="admin-tab-btn pb-3 flex items-center gap-2 cursor-pointer">
-                            <i data-lucide="layers" class="w-4 h-4 text-[#9A7836]"></i>
-                            <span>Gérer le Catalogue (<span id="adminProductCountBadge">17</span>)</span>
+                        <button onclick="switchAdminTab('manage')" data-tab="manage" class="admin-tab-btn pb-3 flex items-center gap-1.5 cursor-pointer">
+                            <i data-lucide="layers" class="w-4 h-4 text-[#9A7836] shrink-0"></i>
+                            <span>Catalogue (<span id="adminProductCountBadge">17</span>)</span>
                         </button>
-                        <button onclick="switchAdminTab('backup')" data-tab="backup" class="admin-tab-btn pb-3 flex items-center gap-2 cursor-pointer">
-                            <i data-lucide="download-cloud" class="w-4 h-4 text-[#9A7836]"></i>
-                            <span>Sauvegarde & Export</span>
+                        <button onclick="switchAdminTab('backup')" data-tab="backup" class="admin-tab-btn pb-3 flex items-center gap-1.5 cursor-pointer">
+                            <i data-lucide="download-cloud" class="w-4 h-4 text-[#9A7836] shrink-0"></i>
+                            <span>Sauvegarde</span>
                         </button>
                     </div>
-                    <button onclick="handleAdminLogout()" class="text-xs text-stone-400 hover:text-stone-700 pb-3 font-medium flex items-center gap-1 cursor-pointer" title="Verrouiller la session">
+                    <button onclick="handleAdminLogout()" class="text-xs text-stone-400 hover:text-stone-700 pb-3 font-medium flex items-center gap-1 cursor-pointer shrink-0" title="Verrouiller la session">
                         <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
                         <span class="hidden sm:inline">Déconnexion</span>
                     </button>

@@ -403,4 +403,53 @@ h1, h2, h3, h4, .font-heading {
     box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
 }
 
+/* ==========================================================================
+   OPTIMISATION RESPONSIVE GLOBALE (MOBILE, TABLETTE & GRANDS ÉCRANS)
+   ========================================================================== */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
 
+/* Masquer la barre de défilement horizontale sur les filtres mobiles */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Ajustements Mobile (< 640px) */
+@media (max-width: 640px) {
+    #toastContainer {
+        left: 14px;
+        right: 14px;
+        bottom: 76px;
+    }
+
+    .toast {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .modal-luxury-content {
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: 0.5rem;
+    }
+
+    #cartDrawer {
+        width: 100vw;
+        max-width: 100vw;
+    }
+}
+
+/* Ajustements Tablette (641px - 1023px) */
+@media (min-width: 641px) and (max-width: 1023px) {
+    .modal-luxury-content {
+        max-height: 88vh;
+        overflow-y: auto;
+    }
+}
