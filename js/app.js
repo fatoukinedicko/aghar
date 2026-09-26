@@ -11,7 +11,8 @@ const state = {
     sort: 'featured',
     currency: 'FCFA',
     cart: [],
-    selectedProduct: null
+    selectedProduct: null,
+    showAllProducts: false
 };
 
 // Initialize Application
@@ -98,12 +99,18 @@ function renderProducts() {
     if (filtered.length === 0) {
         container.innerHTML = '';
         if (emptyState) emptyState.classList.remove('hidden');
+        const loadMoreWrap = document.getElementById('loadMoreProductsWrap');
+        if (loadMoreWrap) loadMoreWrap.innerHTML = '';
         return;
     }
 
     if (emptyState) emptyState.classList.add('hidden');
 
-    container.innerHTML = filtered.map(product => {
+    const maxInitial = 6;
+    const shouldLimit = !state.showAllProducts && filtered.length > maxInitial;
+    const displayedProducts = shouldLimit ? filtered.slice(0, maxInitial) : filtered;
+
+    container.innerHTML = displayedProducts.map(product => {
         const mediaMarkup = product.image ?
             `<img src="${product.image}" alt="${product.name}" class="gallery-img w-full h-full object-cover object-center" loading="lazy">` :
             getProductSvg(product.imageType);
@@ -197,7 +204,37 @@ function renderProducts() {
         `;
     }).join('');
 
+    const loadMoreWrap = document.getElementById('loadMoreProductsWrap');
+    if (loadMoreWrap) {
+        if (filtered.length > maxInitial) {
+            loadMoreWrap.innerHTML = `
+                <button type="button" onclick="toggleShowAllProducts()" class="px-8 py-3.5 rounded-2xl bg-[#0F141C] hover:bg-stone-800 text-[#C5A059] border-2 border-[#C5A059]/60 hover:border-[#C5A059] text-xs uppercase font-extrabold tracking-widest transition-all shadow-lg active:scale-95 inline-flex items-center gap-2.5 cursor-pointer">
+                    <i data-lucide="${state.showAllProducts ? 'chevron-up' : 'sparkles'}" class="w-4 h-4"></i>
+                    <span>${state.showAllProducts ? 'Afficher moins (6 pièces)' : `Voir toute la collection (${filtered.length} pièces)`}</span>
+                </button>
+            `;
+        } else {
+            loadMoreWrap.innerHTML = '';
+        }
+    }
+
     lucide.createIcons();
+}
+
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu) {
+        mobileMenu.classList.add('hidden');
+    }
+}
+
+function toggleShowAllProducts() {
+    state.showAllProducts = !state.showAllProducts;
+    renderProducts();
+    if (!state.showAllProducts) {
+        const target = document.getElementById('catalogue') || document.getElementById('creations');
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 // Toggle "Voir plus / Voir moins" sur les cartes produits et sections
@@ -238,6 +275,7 @@ function setupEventListeners() {
             document.querySelectorAll('.category-pill, .category-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             state.category = btn.dataset.category;
+            state.showAllProducts = false;
             renderProducts();
         });
     });
@@ -252,6 +290,7 @@ function setupEventListeners() {
     searchInputs.forEach(input => {
         input.addEventListener('input', (e) => {
             state.search = e.target.value;
+            state.showAllProducts = false;
             searchInputs.forEach(other => {
                 if (other !== input) other.value = e.target.value;
             });
@@ -676,7 +715,9 @@ function handleCustomQuoteSubmit(e) {
     e.target.reset();
 }
 
-// Testimonials & Visitor Comments Renderer
+// Testimonials & Visitor Comments Carrousel (1 avis affiché à la fois avec flèches et dots)
+let currentTestimonialIndex = 0;
+
 function getVisitorComments() {
     try {
         const raw = localStorage.getItem('aghar_visitor_comments');
@@ -743,15 +784,38 @@ function handleVisitorCommentSubmit(e) {
     const wrap = document.getElementById('visitorCommentFormWrap');
     if (wrap) wrap.classList.add('hidden');
 
+    currentTestimonialIndex = 0;
     renderTestimonials();
-    showToast('Merci ! Votre commentaire a été publié sur la page.', 'success');
+    showToast('Merci ! Votre avis a été publié dans le carrousel.', 'success');
 }
 
 function deleteVisitorComment(commentId) {
     const existing = getVisitorComments().filter(c => c.id !== commentId);
     saveVisitorComments(existing);
+    currentTestimonialIndex = 0;
     renderTestimonials();
     showToast('Commentaire supprimé.', 'info');
+}
+
+function prevTestimonial() {
+    const visitorComments = getVisitorComments();
+    const allReviews = [...visitorComments, ...TESTIMONIALS];
+    if (allReviews.length === 0) return;
+    currentTestimonialIndex = (currentTestimonialIndex - 1 + allReviews.length) % allReviews.length;
+    renderTestimonials();
+}
+
+function nextTestimonial() {
+    const visitorComments = getVisitorComments();
+    const allReviews = [...visitorComments, ...TESTIMONIALS];
+    if (allReviews.length === 0) return;
+    currentTestimonialIndex = (currentTestimonialIndex + 1) % allReviews.length;
+    renderTestimonials();
+}
+
+function goToTestimonial(idx) {
+    currentTestimonialIndex = idx;
+    renderTestimonials();
 }
 
 function renderTestimonials() {
@@ -760,103 +824,199 @@ function renderTestimonials() {
 
     const visitorComments = getVisitorComments();
     const allReviews = [...visitorComments, ...TESTIMONIALS];
+    if (allReviews.length === 0) {
+        container.innerHTML = '';
+        return;
+    }
 
-    container.innerHTML = allReviews.map((t, idx) => `
-        <div class="bg-white p-5 rounded-2xl border ${t.isVisitor ? 'border-[#C5A059]' : 'border-stone-200'} shadow-sm flex flex-col justify-between relative">
+    if (currentTestimonialIndex >= allReviews.length) {
+        currentTestimonialIndex = 0;
+    }
+
+    const t = allReviews[currentTestimonialIndex];
+
+    container.innerHTML = `
+        <div class="relative bg-white p-6 sm:p-8 rounded-3xl border-2 ${t.isVisitor ? 'border-[#C5A059]' : 'border-stone-200'} shadow-sm transition-all duration-300 min-h-[220px] flex flex-col justify-between">
             <div>
-                <div class="flex items-center justify-between gap-2 mb-2.5">
+                <div class="flex items-center justify-between gap-2 mb-4">
                     <div class="flex items-center gap-1 text-[#C5A059]">
-                        ${Array(t.rating).fill('<i data-lucide="star" class="w-3.5 h-3.5 fill-[#C5A059]"></i>').join('')}
+                        ${Array(t.rating).fill('<i data-lucide="star" class="w-4 h-4 fill-[#C5A059]"></i>').join('')}
                     </div>
                     ${t.isVisitor ? `
-                        <div class="flex items-center gap-1.5">
-                            <span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-[#0F141C] text-[#C5A059]">Avis Visiteur</span>
-                            <button type="button" onclick="deleteVisitorComment('${t.id}')" class="text-stone-400 hover:text-red-600 p-0.5" title="Supprimer ce commentaire">
-                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                        <div class="flex items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-[#0F141C] text-[#C5A059]">Avis Visiteur</span>
+                            <button type="button" onclick="deleteVisitorComment('${t.id}')" class="text-stone-400 hover:text-red-600 p-1 cursor-pointer transition-colors" title="Supprimer ce commentaire">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
                             </button>
                         </div>
-                    ` : ''}
+                    ` : `
+                        <span class="px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-stone-100 text-stone-600">Client Vérifié</span>
+                    `}
                 </div>
-                <p id="testi-text-${idx}" class="text-stone-700 text-xs sm:text-sm italic leading-relaxed line-clamp-2">
+
+                <p class="text-stone-800 text-sm sm:text-base italic leading-relaxed font-light mb-4">
                     « ${t.text} »
                 </p>
-                <button type="button" onclick="toggleCardDesc('testi-${idx}', this, true)" class="text-[11px] font-bold text-[#9A7836] hover:text-[#0F141C] transition-colors mt-1 inline-flex items-center gap-1">
-                    <span>Voir plus ▾</span>
-                </button>
             </div>
-            <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
+
+            <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
                 <div>
-                    <div class="text-xs font-bold text-stone-900">${t.author}</div>
-                    <div class="text-[11px] text-stone-500">${t.city}</div>
+                    <div class="text-sm font-bold text-stone-900 font-heading">${t.author}</div>
+                    <div class="text-xs text-stone-500 font-light">${t.city}${t.product ? ` • <span class="text-[#9A7836] font-medium">${t.product}</span>` : ''}</div>
                 </div>
-                <span class="text-[10px] text-stone-400 font-medium">${t.date}</span>
+                <span class="text-xs text-stone-400 font-medium">${t.date}</span>
             </div>
         </div>
-    `).join('');
+
+        <!-- Contrôles du Carrousel : Flèches et Indicateurs (Dots) -->
+        <div class="flex items-center justify-between mt-5 px-1 sm:px-2">
+            <button type="button" onclick="prevTestimonial()" class="w-10 h-10 rounded-full bg-white hover:bg-[#0F141C] text-stone-800 hover:text-[#C5A059] border border-stone-300 hover:border-[#C5A059] flex items-center justify-center shadow-xs transition-all cursor-pointer active:scale-95" aria-label="Avis précédent">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Indicateurs & Compteur -->
+            <div class="flex flex-col items-center gap-1.5">
+                <div class="flex items-center gap-2">
+                    ${allReviews.map((_, idx) => `
+                        <button type="button" onclick="goToTestimonial(${idx})" class="h-2.5 rounded-full transition-all cursor-pointer ${
+                            idx === currentTestimonialIndex ? 'bg-[#0F141C] w-7' : 'bg-stone-300 hover:bg-stone-400 w-2.5'
+                        }" aria-label="Aller à l'avis ${idx + 1}"></button>
+                    `).join('')}
+                </div>
+                <span class="text-[10px] font-bold text-stone-400 uppercase tracking-widest">
+                    Avis ${currentTestimonialIndex + 1} sur ${allReviews.length}
+                </span>
+            </div>
+
+            <button type="button" onclick="nextTestimonial()" class="w-10 h-10 rounded-full bg-white hover:bg-[#0F141C] text-stone-800 hover:text-[#C5A059] border border-stone-300 hover:border-[#C5A059] flex items-center justify-center shadow-xs transition-all cursor-pointer active:scale-95" aria-label="Avis suivant">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+    `;
 
     lucide.createIcons();
 }
 
-// Care Tips Renderer
-function renderCareTips() {
-    const container = document.getElementById('careTipsContainer');
-    if (!container) return;
+// Care Tips Renderer (4 Onglets : Cuir / Bois / Laiton / Vannerie - 1 seule section visible)
+let currentCareTab = 0;
 
-    container.innerHTML = CARE_TIPS.map((tip, idx) => `
-        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
-            <div>
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="w-10 h-10 rounded-xl bg-[#0F141C] border border-[#C5A059]/40 flex items-center justify-center text-[#C5A059] shrink-0">
-                        <i data-lucide="${tip.icon}" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="text-sm font-bold text-stone-900 font-heading leading-snug">${tip.title}</h3>
-                </div>
-                <p class="text-xs text-stone-600 leading-relaxed flex items-start gap-2">
-                    <span class="text-[#C5A059] font-bold">•</span>
-                    <span>${tip.tips[0]}</span>
-                </p>
-                <div id="care-more-${idx}" class="hidden mt-2 space-y-1.5 pt-2 border-t border-stone-100">
-                    ${tip.tips.slice(1).map(t => `
-                        <p class="text-xs text-stone-600 leading-relaxed flex items-start gap-2">
-                            <span class="text-[#C5A059] font-bold">•</span>
-                            <span>${t}</span>
-                        </p>
-                    `).join('')}
-                </div>
-            </div>
-            <button type="button" onclick="toggleSectionMore('care-more-${idx}', this, 'Voir plus ▾', 'Voir moins ▴')" class="text-[11px] font-bold text-[#9A7836] hover:text-[#0F141C] transition-colors mt-3 inline-flex items-center gap-1 self-start">
-                <span>Voir plus ▾</span>
-            </button>
-        </div>
-    `).join('');
+function switchCareTab(idx) {
+    currentCareTab = idx;
+    renderCareTips();
 }
 
-// FAQ Accordion
+function renderCareTips() {
+    const container = document.getElementById('careTipsContainer');
+    if (!container || !CARE_TIPS || CARE_TIPS.length === 0) return;
+
+    const activeTip = CARE_TIPS[currentCareTab] || CARE_TIPS[0];
+    const tabLabels = [
+        { name: "Cuir", icon: "shield-check" },
+        { name: "Bois", icon: "tree-pine" },
+        { name: "Laiton", icon: "sparkles" },
+        { name: "Vannerie", icon: "sun" }
+    ];
+
+    container.innerHTML = `
+        <!-- Barre des 4 Onglets -->
+        <div class="flex items-center justify-center gap-2 sm:gap-3 mb-6 overflow-x-auto pb-1 scrollbar-none">
+            ${tabLabels.map((tab, idx) => {
+                const isActive = idx === currentCareTab;
+                return `
+                    <button type="button" onclick="switchCareTab(${idx})" class="px-4 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
+                        isActive
+                            ? 'bg-[#0F141C] text-[#C5A059] border-2 border-[#C5A059] shadow-md scale-105'
+                            : 'bg-white text-stone-700 hover:text-[#9A7836] border border-stone-200 hover:border-[#C5A059]/40 shadow-2xs'
+                    }">
+                        <i data-lucide="${tab.icon}" class="w-4 h-4 ${isActive ? 'text-[#C5A059]' : 'text-stone-400'}"></i>
+                        <span>${tab.name}</span>
+                    </button>
+                `;
+            }).join('')}
+        </div>
+
+        <!-- 1 Seule Matière Visible à la fois -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border-2 border-[#C5A059]/40 shadow-sm transition-all duration-300">
+            <div class="flex items-center gap-3.5 mb-5 pb-4 border-b border-stone-100">
+                <div class="w-12 h-12 rounded-2xl bg-[#0F141C] border border-[#C5A059]/50 flex items-center justify-center text-[#C5A059] shrink-0 shadow-sm">
+                    <i data-lucide="${activeTip.icon}" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-[10px] uppercase font-extrabold tracking-[0.2em] text-[#9A7836]">Fiche d'Entretien</span>
+                    <h3 class="text-base sm:text-lg font-bold text-stone-900 font-heading leading-tight">${activeTip.title}</h3>
+                </div>
+            </div>
+
+            <div class="space-y-3.5">
+                ${activeTip.tips.map(tipText => `
+                    <div class="flex items-start gap-3 text-xs sm:text-sm text-stone-700 leading-relaxed font-light">
+                        <span class="w-5 h-5 rounded-full bg-[#0F141C] text-[#C5A059] flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</span>
+                        <span>${tipText}</span>
+                    </div>
+                `).join('')}
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500">
+                <span class="flex items-center gap-1.5">
+                    <i data-lucide="info" class="w-4 h-4 text-[#C5A059]"></i>
+                    <span>Restauration artisanale disponible à l'Atelier N° 18B Soumbédioune</span>
+                </span>
+                <a href="https://wa.me/221779640035?text=Bonjour%20Boubacar,%20j'ai%20une%20question%20sur%20l'entretien%20d'une%20pi%C3%A8ce" target="_blank" class="text-xs font-bold text-[#9A7836] hover:text-[#0F141C] flex items-center gap-1">
+                    <span>Conseil en direct</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+            </div>
+        </div>
+    `;
+
+    lucide.createIcons();
+}
+
+// FAQ Accordion (5 lignes cliquables compactes, ~60% de gain de hauteur)
+let currentOpenFaq = null;
+
 function renderFaqs() {
     const container = document.getElementById('faqContainer');
     if (!container) return;
 
     container.innerHTML = FAQS.map((faq, idx) => `
-        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-white">
-            <button onclick="toggleFaq(${idx})" class="w-full p-5 text-left font-bold text-stone-900 flex items-center justify-between gap-4 hover:bg-stone-50 transition-colors">
-                <span class="text-sm font-heading">${faq.q}</span>
-                <i id="faqIcon-${idx}" data-lucide="chevron-down" class="w-4 h-4 text-[#C5A059] transition-transform duration-200"></i>
+        <div class="border border-stone-200 hover:border-[#C5A059]/50 rounded-2xl overflow-hidden bg-white shadow-2xs transition-all">
+            <button type="button" onclick="toggleFaq(${idx})" class="w-full px-4 sm:px-6 py-3.5 sm:py-4 text-left font-bold text-stone-900 flex items-center justify-between gap-3 hover:bg-stone-50/80 transition-colors cursor-pointer group">
+                <span class="text-xs sm:text-sm font-heading group-hover:text-[#9A7836] transition-colors leading-snug">${faq.q}</span>
+                <span class="w-7 h-7 rounded-full bg-stone-100 group-hover:bg-[#0F141C] text-[#C5A059] flex items-center justify-center shrink-0 transition-colors">
+                    <i id="faqIcon-${idx}" data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-300"></i>
+                </span>
             </button>
-            <div id="faqAnswer-${idx}" class="hidden px-5 pb-5 text-xs text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
-                ${faq.a.replace(/\*\*(.*?)\*\*/g, '<strong class="text-stone-900">$1</strong>')}
+            <div id="faqAnswer-${idx}" class="hidden px-4 sm:px-6 pb-4 sm:pb-5 text-xs sm:text-[13px] text-stone-600 leading-relaxed border-t border-stone-100 pt-3.5 bg-stone-50/40">
+                ${faq.a.replace(/\*\*(.*?)\*\*/g, '<strong class="text-stone-900 font-semibold">$1</strong>')}
             </div>
         </div>
     `).join('');
+    lucide.createIcons();
 }
 
 function toggleFaq(idx) {
+    if (currentOpenFaq !== null && currentOpenFaq !== idx) {
+        const prevAns = document.getElementById(`faqAnswer-${currentOpenFaq}`);
+        const prevIcon = document.getElementById(`faqIcon-${currentOpenFaq}`);
+        if (prevAns) prevAns.classList.add('hidden');
+        if (prevIcon) prevIcon.style.transform = 'rotate(0deg)';
+    }
+
     const ans = document.getElementById(`faqAnswer-${idx}`);
     const icon = document.getElementById(`faqIcon-${idx}`);
     if (!ans || !icon) return;
 
     const isHidden = ans.classList.contains('hidden');
-    ans.classList.toggle('hidden', !isHidden);
-    icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+    if (isHidden) {
+        ans.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+        currentOpenFaq = idx;
+    } else {
+        ans.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+        currentOpenFaq = null;
+    }
 }
 
 // Toast Notifications
@@ -1011,12 +1171,13 @@ function startHeroAutoPlay() {
 // Category Shortcut Pill in Hero Banner & Menus
 function selectCategoryAndScroll(categoryKey) {
     state.category = categoryKey;
+    state.showAllProducts = false;
     document.querySelectorAll('.category-pill, .category-btn').forEach(b => {
         b.classList.toggle('active', b.dataset.category === categoryKey);
     });
     renderProducts();
 
-    const target = document.getElementById('creations');
+    const target = document.getElementById('catalogue') || document.getElementById('creations');
     if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
     }
