@@ -1395,12 +1395,12 @@ function handleAdminLogin(e) {
     const pinInput = document.getElementById('adminPinInput');
     const enteredPin = pinInput ? pinInput.value.trim() : '';
 
-    // Codes PIN autorisés : 'aghar2026' ou numéro artisan '779640035'
-    if (enteredPin === 'aghar2026' || enteredPin === '779640035' || enteredPin === '221779640035') {
-        showToast('Bienvenue Boubacar Dicko !', 'success');
+    // Code d'accès sécurisé de l'atelier : fatoukine18
+    if (enteredPin.toLowerCase() === 'fatoukine18' || enteredPin === '779640035' || enteredPin === '221779640035') {
+        showToast('Bienvenue à l\'Atelier AGHAR !', 'success');
         showAdminDashboard();
     } else {
-        showToast('Code PIN incorrect (par défaut : aghar2026)', 'warning');
+        showToast('Code d\'accès incorrect', 'warning');
         if (pinInput) {
             pinInput.value = '';
             pinInput.focus();
